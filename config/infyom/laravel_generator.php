@@ -124,13 +124,13 @@ return [
 
         'softDelete' => true,
 
-        'save_schema_file' => true,
+        'save_schema_file' => false,
 
         'localized' => false,
 
         'tables_searchable_default' => false,
 
-        'repository_pattern' => true,
+        'repository_pattern' => false,
 
         'excluded_fields' => ['id'], // Array of columns that doesn't required while creating module
     ],
