@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Traits\Multitenantable;
 
 /**
  * Class Receita
@@ -21,7 +22,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Receita extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes,Multitenantable;
 
     public $table = 'receitas';
     
