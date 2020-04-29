@@ -21,3 +21,5 @@ Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->middleware('verified');
 
 Route::resource('categorias', 'CategoriaController');
+
+Route::resource('receitas', 'ReceitaController');

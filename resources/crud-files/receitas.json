@@ -1,0 +1,74 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false,
+        "inView": false
+    },
+    {
+        "name": "nome",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "valor",
+        "dbType": "decimal,8,2",
+        "htmlType": "number",
+        "validations": "required"
+    },
+    {
+        "name": "data",
+        "dbType": "date",
+        "htmlType": "date",
+        "validations": "required"
+    },
+    {
+        "name": "efetuada",
+        "dbType": "boolean:default,1",
+        "htmlType": "radio,Sim:1,Não:2"
+    },   
+    {
+        "name": "categoria_id",
+        "dbType": "integer:unsigned:default,0:foreign,categorias,id",
+        "htmlType": "text",
+        "relation": "mt1,Categoria,categoria_id,id"
+    },
+    {
+        "name": "user_id",
+        "dbType": "integer:unsigned:default,0:foreign,users,id",
+        "relation": "mt1,User,user_id,id",
+        "inForm": false,
+        "inIndex": false,
+        "inView": false
+    },
+        {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

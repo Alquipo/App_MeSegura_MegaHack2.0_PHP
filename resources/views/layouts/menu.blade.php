@@ -9,3 +9,9 @@
     <a href="{{ route('categorias.index') }}"><i class="fa fa-edit"></i><span>Categorias</span></a>
 </li>
 
+
+
+<li class="{{ Request::is('receitas*') ? 'active' : '' }}">
+    <a href="{{ route('receitas.index') }}"><i class="fa fa-edit"></i><span>Receitas</span></a>
+</li>
+
