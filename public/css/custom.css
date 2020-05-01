@@ -1,0 +1,23 @@
+.status-span {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-left: 15px;
+    cursor: default;
+    display: block;
+    
+}
+.br{
+    background-color: rgb(244, 67, 54); 
+    color: rgb(244, 67, 54);
+    
+}
+.bg{
+
+    background-color: rgb(76, 175, 80); 
+    color: rgb(76, 175, 80);
+    
+    
+}
+
+

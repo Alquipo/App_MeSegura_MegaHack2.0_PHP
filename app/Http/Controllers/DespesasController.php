@@ -53,6 +53,8 @@ class DespesasController extends AppBaseController
         $input = $request->all();
 
         /** @var Despesas $despesas */
+        // $input['valor'] = str_replace(',','.',$input['valor']);
+                
         $despesas = Despesas::create($input);
 
         Flash::success('Despesas salvo com sucesso.');

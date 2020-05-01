@@ -13,7 +13,16 @@
         <tbody>
         @foreach($despesas as $despesas)
             <tr>
-                <td>{{ $despesas->efetuada }}</td>
+                 @if($despesas->efetuada)
+                    <td>   
+                        <div class="status-span bg" title="Efetuado"></div>
+                    </td>
+                 @else
+                    <td> 
+                        <div class="status-span br" title="Pendente"></div>
+                    </td>
+                 @endif
+
                 <td>{{ $despesas->nome }}</td>
                 <td>{{ $despesas->valor }}</td>
                 <td>{{ $despesas->data }}</td>
@@ -28,7 +37,11 @@
                     {!! Form::close() !!}
                 </td>
             </tr>
+            
         @endforeach
+        
+                
         </tbody>
     </table>
+    
 </div>

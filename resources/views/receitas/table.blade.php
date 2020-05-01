@@ -13,7 +13,15 @@
         <tbody>
         @foreach($receitas as $receita)
             <tr>
-                <td>{{ $receita->efetuada }}</td>
+                @if($receita->efetuada)
+                    <td>   
+                        <div id="situacao" class="status-span bg" title="Efetuado"></div>
+                    </td>
+                 @else
+                    <td> 
+                        <div id="situacao" class="status-span br" title="Pendente"></div>
+                    </td>
+                 @endif
                 <td>{{ $receita->nome }}</td>
                 <td>{{ $receita->valor }}</td>
                 <td>{{ $receita->data_formatada }}</td>

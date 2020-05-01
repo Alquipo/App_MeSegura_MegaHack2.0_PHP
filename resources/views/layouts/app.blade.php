@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
 
     {{-- <style type="text/css" src="css/app.css"></style> --}}
+    <link rel="stylesheet" href="css/custom.css">
+
 
     @yield('css')
 </head>
