@@ -1,6 +1,7 @@
 <template>
     <div>
-         <b-form @submit="onSubmit" @reset="onReset" v-if="show" v-bind:action="this.postRoute">
+
+         <b-form @submit="onSubmit" @reset="onReset" v-if="show" v-bind:action="this.postRoute">    
         <transition name="slide-fade" mode="out-in">
             <form-group 
               index="0"
@@ -57,14 +58,14 @@
 
 
         </transition>
-            <p>Email{{ this.form.email }}</p>
-            <p>Senha{{ this.form.senha }}</p>
-            <p>Nome{{ this.form.nome }}</p>
-            <p>Idade{{ this.form.idade }}</p>
-            <p>Celular{{ this.form.celular }}</p>
-            <b-button variant="secondary" @click="onClicaVolta">Volta</b-button>
-            <b-button variant="secondary" @click="onClicaProximo" v-if="docIndex < 4">Próximo</b-button>
-            <b-button variant="primary" @click="onSubmit" v-if="docIndex == 4">Salvar</b-button>
+        <b-container class="button-margin">
+            <b-row align-h="between">
+                <b-button variant="secondary" href="/login" v-if="docIndex == 0">Já tenho cadastro</b-button>
+                <b-button variant="secondary" @click="onClicaVolta" v-if="docIndex > 0">Volta</b-button>
+                <b-button variant="secondary" @click="onClicaProximo" v-if="docIndex < 4">Próximo</b-button>
+                <b-button variant="primary" @click="onSubmit" v-if="docIndex == 4">Salvar</b-button>
+            </b-row>
+        </b-container>
 
         </b-form>
     </div>
@@ -154,5 +155,9 @@
 /* .slide-fade-leave-active em versões anteriores a 2.1.8 */ {
   transform: translateX(10px);
   opacity: 0;
+}
+
+.button-margin{
+    margin-top: 5rem;
 }
 </style>

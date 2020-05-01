@@ -1928,6 +1928,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['postRoute'],
@@ -2003,6 +2004,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -47560,7 +47566,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.fade-enter-active[data-v-50b532f0],\n.fade-leave-active[data-v-50b532f0] {\n  transition: opacity 0.3s;\n}\n.fade-enter[data-v-50b532f0],\n.fade-leave-to[data-v-50b532f0] {\n  opacity: 0;\n}\n\n    /* Animações de entrada e saída podem utilizar diferentes  */\n/* funções de duração e de tempo.                          */\n.slide-fade-enter-active[data-v-50b532f0] {\n  transition: all .3s ease;\n}\n.slide-fade-leave-active[data-v-50b532f0] {\n  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);\n}\n.slide-fade-enter[data-v-50b532f0], .slide-fade-leave-to[data-v-50b532f0]\n/* .slide-fade-leave-active em versões anteriores a 2.1.8 */ {\n  transform: translateX(10px);\n  opacity: 0;\n}\n", ""]);
+exports.push([module.i, "\n.fade-enter-active[data-v-50b532f0],\n.fade-leave-active[data-v-50b532f0] {\n  transition: opacity 0.3s;\n}\n.fade-enter[data-v-50b532f0],\n.fade-leave-to[data-v-50b532f0] {\n  opacity: 0;\n}\n\n    /* Animações de entrada e saída podem utilizar diferentes  */\n/* funções de duração e de tempo.                          */\n.slide-fade-enter-active[data-v-50b532f0] {\n  transition: all .3s ease;\n}\n.slide-fade-leave-active[data-v-50b532f0] {\n  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);\n}\n.slide-fade-enter[data-v-50b532f0], .slide-fade-leave-to[data-v-50b532f0]\n/* .slide-fade-leave-active em versões anteriores a 2.1.8 */ {\n  transform: translateX(10px);\n  opacity: 0;\n}\n.button-margin[data-v-50b532f0]{\n    margin-top: 5rem;\n}\n", ""]);
 
 // exports
 
@@ -47579,7 +47585,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.label-form[data-v-07bf0e80]{\n        font-size: 2em;\n        margin-bottom: .5rem;\n        font-weight: 500;\n        line-height: 1.2;\n}\n", ""]);
+exports.push([module.i, "\n.label-form[data-v-07bf0e80]{\n        font-size: 2em;\n        color: #8D8C88;\n        margin-bottom: .5rem;\n        font-weight: 500;\n        line-height: 1.2;\n}\n", ""]);
 
 // exports
 
@@ -80165,46 +80171,60 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c("p", [_vm._v("Email" + _vm._s(this.form.email))]),
-              _vm._v(" "),
-              _c("p", [_vm._v("Senha" + _vm._s(this.form.senha))]),
-              _vm._v(" "),
-              _c("p", [_vm._v("Nome" + _vm._s(this.form.nome))]),
-              _vm._v(" "),
-              _c("p", [_vm._v("Idade" + _vm._s(this.form.idade))]),
-              _vm._v(" "),
-              _c("p", [_vm._v("Celular" + _vm._s(this.form.celular))]),
-              _vm._v(" "),
               _c(
-                "b-button",
-                {
-                  attrs: { variant: "secondary" },
-                  on: { click: _vm.onClicaVolta }
-                },
-                [_vm._v("Volta")]
-              ),
-              _vm._v(" "),
-              _vm.docIndex < 4
-                ? _c(
-                    "b-button",
-                    {
-                      attrs: { variant: "secondary" },
-                      on: { click: _vm.onClicaProximo }
-                    },
-                    [_vm._v("Próximo")]
+                "b-container",
+                { staticClass: "button-margin" },
+                [
+                  _c(
+                    "b-row",
+                    { attrs: { "align-h": "between" } },
+                    [
+                      _vm.docIndex == 0
+                        ? _c(
+                            "b-button",
+                            { attrs: { variant: "secondary", href: "/login" } },
+                            [_vm._v("Já tenho cadastro")]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.docIndex > 0
+                        ? _c(
+                            "b-button",
+                            {
+                              attrs: { variant: "secondary" },
+                              on: { click: _vm.onClicaVolta }
+                            },
+                            [_vm._v("Volta")]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.docIndex < 4
+                        ? _c(
+                            "b-button",
+                            {
+                              attrs: { variant: "secondary" },
+                              on: { click: _vm.onClicaProximo }
+                            },
+                            [_vm._v("Próximo")]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.docIndex == 4
+                        ? _c(
+                            "b-button",
+                            {
+                              attrs: { variant: "primary" },
+                              on: { click: _vm.onSubmit }
+                            },
+                            [_vm._v("Salvar")]
+                          )
+                        : _vm._e()
+                    ],
+                    1
                   )
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.docIndex == 4
-                ? _c(
-                    "b-button",
-                    {
-                      attrs: { variant: "primary" },
-                      on: { click: _vm.onSubmit }
-                    },
-                    [_vm._v("Salvar")]
-                  )
-                : _vm._e()
+                ],
+                1
+              )
             ],
             1
           )
@@ -80239,26 +80259,36 @@ var render = function() {
     "b-form-group",
     { attrs: { id: "'input-group-' + index" } },
     [
-      _c("label", {
-        staticClass: "label-form",
-        domProps: { innerHTML: _vm._s(this.labeltext) }
-      }),
+      _c("b-row", { attrs: { "align-v": "start" } }, [
+        _c("label", {
+          staticClass: "label-form",
+          domProps: { innerHTML: _vm._s(this.labeltext) }
+        })
+      ]),
       _vm._v(" "),
-      _c("b-form-input", {
-        attrs: {
-          required: "",
-          placeholder: this.placeholder,
-          type: this.type,
-          name: this.name
-        },
-        model: {
-          value: _vm.field,
-          callback: function($$v) {
-            _vm.field = $$v
-          },
-          expression: "field"
-        }
-      })
+      _c(
+        "b-row",
+        { attrs: { "align-v": "center" } },
+        [
+          _c("b-form-input", {
+            style: { marginTop: "3rem" },
+            attrs: {
+              required: "",
+              placeholder: this.placeholder,
+              type: this.type,
+              name: this.name
+            },
+            model: {
+              value: _vm.field,
+              callback: function($$v) {
+                _vm.field = $$v
+              },
+              expression: "field"
+            }
+          })
+        ],
+        1
+      )
     ],
     1
   )

@@ -16,11 +16,18 @@
 
     </head>
     <body>
+        <style type="text/css">
+            .fundo {
+                background-color: #DCD6C8;
+                border-radius: 5px;
+                padding: 1.35rem
+            }
+        </style>
         <div class="container">
             <br>
             
-                <div class="col align-self-center">
-                    <div class="card">
+                <div class="col-md-4 offset-md-4 col-sm-12">
+                    <div class="card fundo">
                         <div id="form-cadastro">
                             <div class="card-body">
                                 <form-cadastro postRoute="{{url('/register')}}"></form-cadastro>
