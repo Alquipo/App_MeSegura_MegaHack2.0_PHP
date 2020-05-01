@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <style type="text/css" src="css/app.css"></style>
         <style type="text/css" src="css/custom.css"></style>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
     </head>
     <body>
@@ -22,7 +23,7 @@
                     <div class="card">
                         <div id="form-cadastro">
                             <div class="card-body">
-                                <form-cadastro></form-cadastro>
+                                <form-cadastro postRoute="{{url('/register')}}"></form-cadastro>
                             </div>
                         </div>    
                 </div>    

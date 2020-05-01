@@ -1,7 +1,6 @@
 <template>
     <div>
-
-         <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+         <b-form @submit="onSubmit" @reset="onReset" v-if="show" v-bind:action="this.postRoute">
         <transition name="slide-fade" mode="out-in">
             <form-group 
               index="0"
@@ -64,7 +63,8 @@
             <p>Idade{{ this.form.idade }}</p>
             <p>Celular{{ this.form.celular }}</p>
             <b-button variant="secondary" @click="onClicaVolta">Volta</b-button>
-            <b-button variant="secondary" @click="onClicaProximo">Próximo</b-button>
+            <b-button variant="secondary" @click="onClicaProximo" v-if="docIndex < 4">Próximo</b-button>
+            <b-button variant="primary" @click="onSubmit" v-if="docIndex == 4">Salvar</b-button>
 
         </b-form>
     </div>
@@ -74,6 +74,7 @@
     import FormGroup from './FormGroup'
 
     export default {
+        props: ['postRoute'],
         data: function() {
             return {
                 form: {
@@ -81,7 +82,6 @@
                     email: '',
                     password: '',
                     celular: '',
-                    saldo: '',
                     idade: ''
                 },
                 docIndex:0,
@@ -97,8 +97,18 @@
         },
          methods: {
           onSubmit(evt) {
-            evt.preventDefault()
-            alert(JSON.stringify(this.form))
+            evt.preventDefault();
+            console.log(JSON.stringify(this.form));
+            console.log(this.form)
+            this.errors = {};
+              axios.post('/user/register', this.form).then(response => {
+                console.log('Message sent!');
+              }).catch(error => {
+                if (error.response.status === 422) {
+                  this.errors = error.response.data.errors || {};
+                }
+              });
+              console.log(this.errors);
           },
           onReset(evt) {
             evt.preventDefault()
@@ -106,7 +116,6 @@
             this.form.email = ''
             this.form.nome = ''
             this.form.password = ''
-            this.form.saldo = ''
             this.form.idade = ''
             // Trick to reset/clear native browser form validation state
             this.show = false

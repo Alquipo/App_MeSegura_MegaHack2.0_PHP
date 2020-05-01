@@ -1930,6 +1930,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['postRoute'],
   data: function data() {
     return {
       form: {
@@ -1937,7 +1938,6 @@ __webpack_require__.r(__webpack_exports__);
         email: '',
         password: '',
         celular: '',
-        saldo: '',
         idade: ''
       },
       docIndex: 0,
@@ -1953,23 +1953,34 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     onSubmit: function onSubmit(evt) {
+      var _this = this;
+
       evt.preventDefault();
-      alert(JSON.stringify(this.form));
+      console.log(JSON.stringify(this.form));
+      console.log(this.form);
+      this.errors = {};
+      axios.post('/user/register', this.form).then(function (response) {
+        console.log('Message sent!');
+      })["catch"](function (error) {
+        if (error.response.status === 422) {
+          _this.errors = error.response.data.errors || {};
+        }
+      });
+      console.log(this.errors);
     },
     onReset: function onReset(evt) {
-      var _this = this;
+      var _this2 = this;
 
       evt.preventDefault(); // Reset our form values
 
       this.form.email = '';
       this.form.nome = '';
       this.form.password = '';
-      this.form.saldo = '';
       this.form.idade = ''; // Trick to reset/clear native browser form validation state
 
       this.show = false;
       this.$nextTick(function () {
-        _this.show = true;
+        _this2.show = true;
       });
     },
     onClicaProximo: function onClicaProximo(evt) {
@@ -80041,7 +80052,10 @@ var render = function() {
       _vm.show
         ? _c(
             "b-form",
-            { on: { submit: _vm.onSubmit, reset: _vm.onReset } },
+            {
+              attrs: { action: this.postRoute },
+              on: { submit: _vm.onSubmit, reset: _vm.onReset }
+            },
             [
               _c(
                 "transition",
@@ -80170,14 +80184,27 @@ var render = function() {
                 [_vm._v("Volta")]
               ),
               _vm._v(" "),
-              _c(
-                "b-button",
-                {
-                  attrs: { variant: "secondary" },
-                  on: { click: _vm.onClicaProximo }
-                },
-                [_vm._v("Próximo")]
-              )
+              _vm.docIndex < 4
+                ? _c(
+                    "b-button",
+                    {
+                      attrs: { variant: "secondary" },
+                      on: { click: _vm.onClicaProximo }
+                    },
+                    [_vm._v("Próximo")]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.docIndex == 4
+                ? _c(
+                    "b-button",
+                    {
+                      attrs: { variant: "primary" },
+                      on: { click: _vm.onSubmit }
+                    },
+                    [_vm._v("Salvar")]
+                  )
+                : _vm._e()
             ],
             1
           )

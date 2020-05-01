@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('nome');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('celular');
+            $table->string('celular')->nullable();
             $table->decimal('saldo', 8, 2)->default(0);
             $table->integer('idade')->nullable();
             $table->integer('experiencia')->default(0);
@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->integer('nivel')->default(1);
 
 
-            $table->boolean('active')->default(1);
+            $table->boolean('ativo')->default(1);
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->softDeletes();
