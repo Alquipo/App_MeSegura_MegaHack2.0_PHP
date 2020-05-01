@@ -6,7 +6,7 @@
         <th>Valor</th>
         <th>Data</th>
         <th>Efetuada</th>
-        <th>Categoria Id</th>
+        <th>Categoria</th>
                 <th colspan="3">Ação</th>
             </tr>
         </thead>
@@ -14,10 +14,10 @@
         @foreach($receitas as $receita)
             <tr>
                 <td>{{ $receita->nome }}</td>
-            <td>{{ $receita->valor }}</td>
-            <td>{{ $receita->data_formatada }}</td>
-            <td>{{ $receita->efetuada }}</td>
-            <td>{{ $receita->categoria->nome }}</td>
+                <td>{{ $receita->valor }}</td>
+                <td>{{ $receita->data_formatada }}</td>
+                <td>{{ $receita->efetuada }}</td>
+                <td>{{ $receita->categoria->nome }}</td>
                 <td>
                     {!! Form::open(['route' => ['receitas.destroy', $receita->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

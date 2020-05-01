@@ -6,7 +6,7 @@
         <th>Valor</th>
         <th>Data</th>
         <th>Efetuada</th>
-        <th>Categoria Id</th>
+        <th>Categoria</th>
                 <th colspan="3">Ação</th>
             </tr>
         </thead>

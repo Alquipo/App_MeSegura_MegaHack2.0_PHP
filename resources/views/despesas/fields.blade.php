@@ -30,6 +30,12 @@
     </script>
 @endpush
 
+<!-- Categoria Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('categoria_id', 'Categoria:') !!}
+    {!! Form::select('categoria_id', $categorias->pluck('nome','id'), null, ['class' => 'form-control', 'placeholder' => 'Escolha uma categoria']) !!}
+</div>
+
 <!-- 'bootstrap / Toggle Switch Efetuada Field' -->
 <div class="form-group col-sm-6">
     {!! Form::label('efetuada', 'Efetuada:') !!}
@@ -40,11 +46,7 @@
 </div>
 
 
-<!-- Categoria Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('categoria_id', 'Categoria Id:') !!}
-    {!! Form::select('categoria_id', $categorias->pluck('nome','id'), null, ['class' => 'form-control', 'placeholder' => 'Escolha uma categoria']) !!}
-</div>
+
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
