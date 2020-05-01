@@ -21,7 +21,7 @@
     {
         "name": "valor",
         "dbType": "decimal,8,2",
-        "htmlType": "number",
+        "htmlType": "text",
         "validations": "required"
     },
     {
@@ -33,12 +33,12 @@
     {
         "name": "efetuada",
         "dbType": "boolean:default,1",
-        "htmlType": "radio,Sim:1,Não:2"
+        "htmlType": "toggle-switch"
     },   
     {
         "name": "categoria_id",
         "dbType": "integer:unsigned:default,0:foreign,categorias,id",
-        "htmlType": "text",
+        "htmlType": "select,investimento",
         "relation": "mt1,Categoria,categoria_id,id"
     },
     {
