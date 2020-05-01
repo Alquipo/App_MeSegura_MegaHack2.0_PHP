@@ -1896,6 +1896,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -1904,6 +1936,7 @@ __webpack_require__.r(__webpack_exports__);
         nome: '',
         email: '',
         password: '',
+        celular: '',
         saldo: '',
         idade: ''
       },
@@ -47516,7 +47549,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.fade-enter-active[data-v-50b532f0], .fade-leave-active[data-v-50b532f0] {\n  transition: opacity 1.5s;\n}\n.fade-enter[data-v-50b532f0], .fade-leave-to[data-v-50b532f0] /* .fade-leave-active em versões anteriores a 2.1.8 */ {\n  opacity: 0;\n}\n.component-fade-enter-active[data-v-50b532f0], .component-fade-leave-active[data-v-50b532f0] {\n  transition: opacity .3s ease;\n}\n.component-fade-enter[data-v-50b532f0], .component-fade-leave-to[data-v-50b532f0]\n/* .component-fade-leave-active em versões anteriores a 2.1.8 */ {\n  opacity: 0;\n}\n", ""]);
+exports.push([module.i, "\n.fade-enter-active[data-v-50b532f0],\n.fade-leave-active[data-v-50b532f0] {\n  transition: opacity 0.3s;\n}\n.fade-enter[data-v-50b532f0],\n.fade-leave-to[data-v-50b532f0] {\n  opacity: 0;\n}\n\n    /* Animações de entrada e saída podem utilizar diferentes  */\n/* funções de duração e de tempo.                          */\n.slide-fade-enter-active[data-v-50b532f0] {\n  transition: all .3s ease;\n}\n.slide-fade-leave-active[data-v-50b532f0] {\n  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);\n}\n.slide-fade-enter[data-v-50b532f0], .slide-fade-leave-to[data-v-50b532f0]\n/* .slide-fade-leave-active em versões anteriores a 2.1.8 */ {\n  transform: translateX(10px);\n  opacity: 0;\n}\n", ""]);
 
 // exports
 
@@ -80012,7 +80045,7 @@ var render = function() {
             [
               _c(
                 "transition",
-                { attrs: { name: "fade", mode: "out-in" } },
+                { attrs: { name: "slide-fade", mode: "out-in" } },
                 [
                   _vm.docIndex == 0
                     ? _c("form-group", {
@@ -80039,6 +80072,26 @@ var render = function() {
                         key: "1",
                         attrs: {
                           index: "1",
+                          name: "password",
+                          type: "password",
+                          placeholder: "digite sua senha",
+                          labeltext: "Agora, defina sua senha"
+                        },
+                        model: {
+                          value: _vm.form.password,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "password", $$v)
+                          },
+                          expression: "form.password"
+                        }
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.docIndex == 2
+                    ? _c("form-group", {
+                        key: "2",
+                        attrs: {
+                          index: "2",
                           name: "nome",
                           type: "text",
                           placeholder: "digite seu nome",
@@ -80052,6 +80105,47 @@ var render = function() {
                           expression: "form.nome"
                         }
                       })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.docIndex == 3
+                    ? _c("form-group", {
+                        key: "3",
+                        attrs: {
+                          index: "3",
+                          name: "idade",
+                          type: "number",
+                          placeholder: "digite sua idade",
+                          labeltext: "Quantos anos você tem?"
+                        },
+                        model: {
+                          value: _vm.form.idade,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "idade", $$v)
+                          },
+                          expression: "form.idade"
+                        }
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.docIndex == 4
+                    ? _c("form-group", {
+                        key: "4",
+                        attrs: {
+                          index: "4",
+                          name: "celular",
+                          type: "text",
+                          placeholder: "número de celular",
+                          labeltext:
+                            "Você pode, todo dia, fazer o controle das finanças pelo aplicativo e também pelo Whastapp"
+                        },
+                        model: {
+                          value: _vm.form.celular,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "celular", $$v)
+                          },
+                          expression: "form.celular"
+                        }
+                      })
                     : _vm._e()
                 ],
                 1
@@ -80059,7 +80153,13 @@ var render = function() {
               _vm._v(" "),
               _c("p", [_vm._v("Email" + _vm._s(this.form.email))]),
               _vm._v(" "),
+              _c("p", [_vm._v("Senha" + _vm._s(this.form.senha))]),
+              _vm._v(" "),
               _c("p", [_vm._v("Nome" + _vm._s(this.form.nome))]),
+              _vm._v(" "),
+              _c("p", [_vm._v("Idade" + _vm._s(this.form.idade))]),
+              _vm._v(" "),
+              _c("p", [_vm._v("Celular" + _vm._s(this.form.celular))]),
               _vm._v(" "),
               _c(
                 "b-button",
@@ -80491,15 +80591,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************!*\
   !*** ./resources/js/components/FormCadastro.vue ***!
   \**************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FormCadastro_vue_vue_type_template_id_50b532f0_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormCadastro.vue?vue&type=template&id=50b532f0&scoped=true& */ "./resources/js/components/FormCadastro.vue?vue&type=template&id=50b532f0&scoped=true&");
 /* harmony import */ var _FormCadastro_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormCadastro.vue?vue&type=script&lang=js& */ "./resources/js/components/FormCadastro.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _FormCadastro_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _FormCadastro_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _FormCadastro_vue_vue_type_style_index_0_id_50b532f0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormCadastro.vue?vue&type=style&index=0&id=50b532f0&scoped=true&lang=css& */ "./resources/js/components/FormCadastro.vue?vue&type=style&index=0&id=50b532f0&scoped=true&lang=css&");
+/* empty/unused harmony star reexport *//* harmony import */ var _FormCadastro_vue_vue_type_style_index_0_id_50b532f0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormCadastro.vue?vue&type=style&index=0&id=50b532f0&scoped=true&lang=css& */ "./resources/js/components/FormCadastro.vue?vue&type=style&index=0&id=50b532f0&scoped=true&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -80531,7 +80630,7 @@ component.options.__file = "resources/js/components/FormCadastro.vue"
 /*!***************************************************************************!*\
   !*** ./resources/js/components/FormCadastro.vue?vue&type=script&lang=js& ***!
   \***************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -80579,15 +80678,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************************!*\
   !*** ./resources/js/components/FormGroup.vue ***!
   \***********************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FormGroup_vue_vue_type_template_id_07bf0e80_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormGroup.vue?vue&type=template&id=07bf0e80&scoped=true& */ "./resources/js/components/FormGroup.vue?vue&type=template&id=07bf0e80&scoped=true&");
 /* harmony import */ var _FormGroup_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormGroup.vue?vue&type=script&lang=js& */ "./resources/js/components/FormGroup.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _FormGroup_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _FormGroup_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _FormGroup_vue_vue_type_style_index_0_id_07bf0e80_lang_css_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormGroup.vue?vue&type=style&index=0&id=07bf0e80&lang=css&scoped=true& */ "./resources/js/components/FormGroup.vue?vue&type=style&index=0&id=07bf0e80&lang=css&scoped=true&");
+/* empty/unused harmony star reexport *//* harmony import */ var _FormGroup_vue_vue_type_style_index_0_id_07bf0e80_lang_css_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormGroup.vue?vue&type=style&index=0&id=07bf0e80&lang=css&scoped=true& */ "./resources/js/components/FormGroup.vue?vue&type=style&index=0&id=07bf0e80&lang=css&scoped=true&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -80619,7 +80717,7 @@ component.options.__file = "resources/js/components/FormGroup.vue"
 /*!************************************************************************!*\
   !*** ./resources/js/components/FormGroup.vue?vue&type=script&lang=js& ***!
   \************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

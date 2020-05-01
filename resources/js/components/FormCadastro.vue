@@ -2,7 +2,7 @@
     <div>
 
          <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-        <transition name="fade" mode="out-in">
+        <transition name="slide-fade" mode="out-in">
             <form-group 
               index="0"
               v-model="form.email"
@@ -14,23 +14,55 @@
               v-if="docIndex == 0">
               
             </form-group>
-
             <form-group 
                 index="1"
+              v-model="form.password"
+              name="password"
+              type="password"
+              placeholder="digite sua senha"
+              labeltext="Agora, defina sua senha"
+              key="1"
+              v-if="docIndex == 1">
+            </form-group>
+            <form-group 
+                index="2"
               v-model="form.nome"
               name="nome"
               type="text"
               placeholder="digite seu nome"
               labeltext="Me diz, como gostaria de ser chamado?"
-              key="1"
-              v-if="docIndex == 1">
+              key="2"
+              v-if="docIndex == 2">
               
+            </form-group>
+            <form-group 
+                index="3"
+              v-model="form.idade"
+              name="idade"
+              type="number"
+              placeholder="digite sua idade"
+              labeltext="Quantos anos você tem?"
+              key="3"
+              v-if="docIndex == 3">
+            </form-group>
+            <form-group 
+                index="4"
+              v-model="form.celular"
+              name="celular"
+              type="text"
+              placeholder="número de celular"
+              labeltext="Você pode, todo dia, fazer o controle das finanças pelo aplicativo e também pelo Whastapp"
+              key="4"
+              v-if="docIndex == 4">
             </form-group>
 
 
         </transition>
             <p>Email{{ this.form.email }}</p>
+            <p>Senha{{ this.form.senha }}</p>
             <p>Nome{{ this.form.nome }}</p>
+            <p>Idade{{ this.form.idade }}</p>
+            <p>Celular{{ this.form.celular }}</p>
             <b-button variant="secondary" @click="onClicaVolta">Volta</b-button>
             <b-button variant="secondary" @click="onClicaProximo">Próximo</b-button>
 
@@ -48,6 +80,7 @@
                     nome: '',
                     email: '',
                     password: '',
+                    celular: '',
                     saldo: '',
                     idade: ''
                 },
@@ -91,18 +124,26 @@
 </script>
 
 <style scoped>
-    .fade-enter-active, .fade-leave-active {
-      transition: opacity 1.5s;
-    }
-    .fade-enter, .fade-leave-to /* .fade-leave-active em versões anteriores a 2.1.8 */ {
-      opacity: 0;
-    }
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
 
-    .component-fade-enter-active, .component-fade-leave-active {
-      transition: opacity .3s ease;
-    }
-    .component-fade-enter, .component-fade-leave-to
-    /* .component-fade-leave-active em versões anteriores a 2.1.8 */ {
-      opacity: 0;
-    }
+    /* Animações de entrada e saída podem utilizar diferentes  */
+/* funções de duração e de tempo.                          */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active em versões anteriores a 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
 </style>
