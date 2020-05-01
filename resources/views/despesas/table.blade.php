@@ -17,7 +17,7 @@
             <td>{{ $despesas->valor }}</td>
             <td>{{ $despesas->data }}</td>
             <td>{{ $despesas->efetuada }}</td>
-            <td>{{ $despesas->categoria_id }}</td>
+            <td>{{ $despesas->categoria->nome }}</td>
                 <td>
                     {!! Form::open(['route' => ['despesas.destroy', $despesas->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
