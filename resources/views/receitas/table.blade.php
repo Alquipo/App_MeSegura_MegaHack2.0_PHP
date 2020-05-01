@@ -15,9 +15,9 @@
             <tr>
                 <td>{{ $receita->nome }}</td>
             <td>{{ $receita->valor }}</td>
-            <td>{{ $receita->data }}</td>
+            <td>{{ $receita->data_formatada }}</td>
             <td>{{ $receita->efetuada }}</td>
-            <td>{{ $receita->categoria_id }}</td>
+            <td>{{ $receita->categoria->nome }}</td>
                 <td>
                     {!! Form::open(['route' => ['receitas.destroy', $receita->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

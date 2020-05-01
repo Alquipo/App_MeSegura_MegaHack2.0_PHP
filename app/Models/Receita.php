@@ -5,6 +5,7 @@ namespace App\Models;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Traits\Multitenantable;
+use \Carbon\Carbon;
 
 /**
  * Class Receita
@@ -80,5 +81,15 @@ class Receita extends Model
     public function user()
     {
         return $this->belongsTo(\App\Models\User::class, 'user_id', 'id');
+    }
+
+    public function getDataFormatadaAttribute($value)
+    {
+        return Carbon::parse($this->data)->format('d/m/Y');
+    }
+
+    public function setDataAttribute($value)
+    {
+        $this->attributes['data'] = Carbon::createFromFormat("d/m/Y", $value)->toDateString();;
     }
 }

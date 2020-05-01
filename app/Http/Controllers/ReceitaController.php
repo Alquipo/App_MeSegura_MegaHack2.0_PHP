@@ -6,6 +6,7 @@ use App\Http\Requests\CreateReceitaRequest;
 use App\Http\Requests\UpdateReceitaRequest;
 use App\Http\Controllers\AppBaseController;
 use App\Models\Receita;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
@@ -35,7 +36,9 @@ class ReceitaController extends AppBaseController
      */
     public function create()
     {
-        return view('receitas.create');
+        $categorias = Categoria::where('tipo', 'R');
+        // dd($categorias);
+        return view('receitas.create')->with('categorias', $categorias);
     }
 
     /**
@@ -48,7 +51,6 @@ class ReceitaController extends AppBaseController
     public function store(CreateReceitaRequest $request)
     {
         $input = $request->all();
-
         /** @var Receita $receita */
         $receita = Receita::create($input);
 
