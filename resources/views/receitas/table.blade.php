@@ -4,7 +4,7 @@
             <tr>
                 <th>Situação</th>
                 <th>Nome</th>
-                <th>Valor</th>
+                <th>Valor(R$)</th>
                 <th>Data</th>
                 <th>Categoria</th>
                 <th colspan="3">Ação</th>
@@ -23,7 +23,7 @@
                     </td>
                  @endif
                 <td>{{ $receita->nome }}</td>
-                <td>{{ $receita->valor }}</td>
+                <td>{{ $receita->valor_receita_formatado }}</td>
                 <td>{{ $receita->data_formatada }}</td>
                 <td>{{ $receita->categoria->nome }}</td>
                 <td>

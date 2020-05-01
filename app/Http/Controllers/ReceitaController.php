@@ -115,6 +115,7 @@ class ReceitaController extends AppBaseController
     {
         /** @var Receita $receita */
         $receita = Receita::find($id);
+        
 
         if (empty($receita)) {
             Flash::error('Receita não encontrado.');
@@ -123,8 +124,10 @@ class ReceitaController extends AppBaseController
         }
 
         $receita->fill($request->all());
+        
         $receita->save();
-
+        //dd($receita);
+        
         Flash::success('Receita atualizado com sucesso.');
 
         return redirect(route('receitas.index'));

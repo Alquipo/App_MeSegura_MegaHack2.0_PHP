@@ -5,10 +5,20 @@
 </div>
 
 <!-- Valor Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('valor', 'Valor:') !!}
-    {!! Form::text('valor', null, ['class' => 'form-control']) !!}
-</div>
+@if(isset($update))
+    <div class="form-group col-sm-6">
+        {!! Form::label('valor', 'Valor:') !!}
+        {!! Form::text('valor', 'R$ '. number_format($despesas['valor'], 2, ',', '.'), ['class' => 'form-control', 'id' => 'valor_despesa']) !!}
+    </div>
+
+@else
+
+    <div class="form-group col-sm-6">
+        {!! Form::label('valor', 'Valor:') !!}
+        {!! Form::text('valor', 'R$ '. number_format(0, 2, ',', '.'), ['class' => 'form-control', 'id' => 'valor_despesa']) !!}
+
+    </div>
+@endif
 
 <!-- Data Field -->
 <div class="form-group col-sm-6">

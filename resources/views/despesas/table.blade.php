@@ -24,8 +24,8 @@
                  @endif
 
                 <td>{{ $despesas->nome }}</td>
-                <td>{{ $despesas->valor }}</td>
-                <td>{{ $despesas->data }}</td>
+                <td>{{ $despesas->valor_despesa_formatado }}</td>
+                <td>{{ $despesas->data_formatada }}</td>
                 <td>{{ $despesas->categoria->nome }}</td>
                 <td>
                     {!! Form::open(['route' => ['despesas.destroy', $despesas->id], 'method' => 'delete']) !!}

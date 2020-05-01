@@ -5,10 +5,22 @@
 </div>
 
 <!-- Valor Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('valor', 'Valor:') !!}
-    {!! Form::text('valor', null, ['class' => 'form-control']) !!}
-</div>
+@if(isset($update))
+    <div class="form-group col-sm-6">
+        {!! Form::label('valor', 'Valor:') !!}
+        {!! Form::text('valor', 'R$ '. number_format($receita['valor'], 2, ',', '.'), ['class' => 'form-control', 'id' => 'valor_receita']) !!}
+
+    </div>
+
+@else
+
+    <div class="form-group col-sm-6">
+        {!! Form::label('valor', 'Valor:') !!}
+        {!! Form::text('valor', 'R$ '. number_format(0, 2, ',', '.'), ['class' => 'form-control', 'id' => 'valor_receita']) !!}
+
+    </div>
+@endif
+
 
 <!-- Data Field -->
 <div class="form-group col-sm-6">
@@ -49,3 +61,6 @@
     {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
     <a href="{{ route('receitas.index') }}" class="btn btn-default">Cancelar</a>
 </div>
+
+<script src="{{asset('/js/jquery.maskMoney.min.js')}}"></script>
+<script src="{{asset('/js/moedas.js')}}"></script>

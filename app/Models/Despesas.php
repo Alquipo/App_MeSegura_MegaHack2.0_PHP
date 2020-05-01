@@ -6,6 +6,8 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Traits\Multitenantable;
 use \Carbon\Carbon;
+use Illuminate\Support\Str;
+
 
 /**
  * Class Despesas
@@ -90,5 +92,24 @@ class Despesas extends Model
     public function setDataAttribute($value)
     {
         $this->attributes['data'] = Carbon::createFromFormat("d/m/Y", $value)->toDateString();;
+    }
+
+    public function setValorAttribute($value)
+    {
+                
+        if(Str::contains($value, 'R$')){
+            $resultado = str_replace(["R$ ", "."], "", $value);
+            $resultado = str_replace(["," ], ".", $resultado);
+        }
+        else
+            $resultado = $value;
+         
+        $this->attributes['valor'] = $resultado;
+    }
+
+    public function getValorDespesaFormatadoAttribute()
+    {
+        return number_format($this->attributes['valor'], 2, ',', '.');
+        
     }
 }
