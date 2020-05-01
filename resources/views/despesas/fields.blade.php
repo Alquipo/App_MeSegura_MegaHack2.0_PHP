@@ -7,7 +7,7 @@
 <!-- Valor Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('valor', 'Valor:') !!}
-    {!! Form::number('valor', null, ['class' => 'form-control']) !!}
+    {!! Form::text('valor', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Data Field -->
@@ -30,18 +30,15 @@
     </script>
 @endpush
 
-<!-- Efetuada Field -->
-<div class="form-group col-sm-12">
+<!-- 'bootstrap / Toggle Switch Efetuada Field' -->
+<div class="form-group col-sm-6">
     {!! Form::label('efetuada', 'Efetuada:') !!}
-    <label class="radio-inline">
-        {!! Form::radio('efetuada', "1", null) !!} Sim
+    <label class="checkbox-inline">
+        {!! Form::hidden('efetuada', 0) !!}
+        {!! Form::checkbox('efetuada', 1, null,  ['data-toggle' => 'toggle']) !!}
     </label>
-
-    <label class="radio-inline">
-        {!! Form::radio('efetuada', "2", null) !!} Não
-    </label>
-
 </div>
+
 
 <!-- Categoria Id Field -->
 <div class="form-group col-sm-6">
@@ -52,5 +49,5 @@
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
-    <a href="{{ route('receitas.index') }}" class="btn btn-default">Cancelar</a>
+    <a href="{{ route('despesas.index') }}" class="btn btn-default">Cancelar</a>
 </div>

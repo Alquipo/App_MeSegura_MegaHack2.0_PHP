@@ -27,7 +27,7 @@
     {
         "name": "data",
         "dbType": "date",
-        "htmlType": "txt",
+        "htmlType": "text",
         "validations": "required"
     },
     {

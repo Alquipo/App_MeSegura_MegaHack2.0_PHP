@@ -92,13 +92,15 @@ class ReceitaController extends AppBaseController
         /** @var Receita $receita */
         $receita = Receita::find($id);
 
+        $categorias = Categoria::where('tipo', 'R');
+
         if (empty($receita)) {
             Flash::error('Receita não encontrado.');
 
             return redirect(route('receitas.index'));
         }
-
-        return view('receitas.edit')->with('receita', $receita);
+        
+        return view('receitas.edit')->with('receita', $receita)->with('categorias', $categorias);
     }
 
     /**

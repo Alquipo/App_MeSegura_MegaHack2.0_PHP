@@ -23,3 +23,5 @@ Route::get('/home', 'HomeController@index')->middleware('verified');
 Route::resource('categorias', 'CategoriaController');
 
 Route::resource('receitas', 'ReceitaController');
+
+Route::resource('despesas', 'DespesasController');

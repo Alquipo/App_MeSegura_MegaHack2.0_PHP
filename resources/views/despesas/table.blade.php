@@ -1,0 +1,34 @@
+<div class="table-responsive">
+    <table class="table" id="despesas-table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+        <th>Valor</th>
+        <th>Data</th>
+        <th>Efetuada</th>
+        <th>Categoria Id</th>
+                <th colspan="3">Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach($despesas as $despesas)
+            <tr>
+                <td>{{ $despesas->nome }}</td>
+            <td>{{ $despesas->valor }}</td>
+            <td>{{ $despesas->data }}</td>
+            <td>{{ $despesas->efetuada }}</td>
+            <td>{{ $despesas->categoria_id }}</td>
+                <td>
+                    {!! Form::open(['route' => ['despesas.destroy', $despesas->id], 'method' => 'delete']) !!}
+                    <div class='btn-group'>
+                        <a href="{{ route('despesas.show', [$despesas->id]) }}" class='btn btn-default btn-xs' title="Mostrar"><i class="glyphicon glyphicon-eye-open"></i></a>
+                        <a href="{{ route('despesas.edit', [$despesas->id]) }}" class='btn btn-default btn-xs' title="Editar"><i class="glyphicon glyphicon-edit"></i></a>
+                        {!! Form::button('<i class="glyphicon glyphicon-trash" title="Excluir"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Você tem certeza?')"]) !!}
+                    </div>
+                    {!! Form::close() !!}
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+</div>
