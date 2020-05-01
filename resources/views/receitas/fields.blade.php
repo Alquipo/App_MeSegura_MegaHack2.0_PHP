@@ -7,7 +7,7 @@
 <!-- Valor Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('valor', 'Valor:') !!}
-    {!! Form::number('valor', null, ['class' => 'form-control']) !!}
+    {!! Form::text('valor', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Data Field -->
@@ -36,20 +36,13 @@
     {!! Form::select('categoria_id', $categorias->pluck('nome','id'), null, ['class' => 'form-control', 'placeholder' => 'Escolha uma categoria']) !!}
 </div>
 
-<!-- Efetuada Field -->
-<div class="form-group col-sm-12">
+<div class="form-group col-sm-6">
     {!! Form::label('efetuada', 'Efetuada:') !!}
-    <label class="radio-inline">
-        {!! Form::radio('efetuada', "1", null) !!} Sim
+    <label class="checkbox-inline">
+        {!! Form::hidden('efetuada', 0) !!}
+        {!! Form::checkbox('efetuada', 1, null,  ['data-toggle' => 'toggle']) !!}
     </label>
-
-    <label class="radio-inline">
-        {!! Form::radio('efetuada', "2", null) !!} Não
-    </label>
-
 </div>
-
-
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

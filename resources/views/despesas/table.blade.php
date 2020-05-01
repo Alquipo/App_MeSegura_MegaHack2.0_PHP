@@ -2,22 +2,22 @@
     <table class="table" id="despesas-table">
         <thead>
             <tr>
+                <th>Situação</th>
                 <th>Nome</th>
-        <th>Valor</th>
-        <th>Data</th>
-        <th>Efetuada</th>
-        <th>Categoria</th>
+                <th>Valor</th>
+                <th>Data</th>
+                <th>Categoria</th>
                 <th colspan="3">Ação</th>
             </tr>
         </thead>
         <tbody>
         @foreach($despesas as $despesas)
             <tr>
+                <td>{{ $despesas->efetuada }}</td>
                 <td>{{ $despesas->nome }}</td>
-            <td>{{ $despesas->valor }}</td>
-            <td>{{ $despesas->data }}</td>
-            <td>{{ $despesas->efetuada }}</td>
-            <td>{{ $despesas->categoria->nome }}</td>
+                <td>{{ $despesas->valor }}</td>
+                <td>{{ $despesas->data }}</td>
+                <td>{{ $despesas->categoria->nome }}</td>
                 <td>
                     {!! Form::open(['route' => ['despesas.destroy', $despesas->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
