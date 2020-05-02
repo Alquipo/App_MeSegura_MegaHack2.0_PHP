@@ -4,15 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "bf8fb0849c47c858d7248437a767f6ac",
-=======
-<<<<<<< HEAD
-    "content-hash": "9f18b619d7b8f84ec14bc768c30184a0",
-=======
-    "content-hash": "d14a5524a10c12fab47909247c40e086",
->>>>>>> avancando no cadastro de usuario pelo formulario dinamico
->>>>>>> 9a7847cb2516bba520ab55763abeed5ea864a096
+    "content-hash": "684fb82cc1010fb711e44f7ccdfb92b4",
     "packages": [
         {
             "name": "defuse/php-encryption",
@@ -406,8 +398,6 @@
             "time": "2020-02-22T01:51:47+00:00"
         },
         {
-<<<<<<< HEAD
-=======
             "name": "firebase/php-jwt",
             "version": "v5.2.0",
             "source": {
@@ -458,7 +448,6 @@
             "time": "2020-03-25T18:49:23+00:00"
         },
         {
->>>>>>> 9a7847cb2516bba520ab55763abeed5ea864a096
             "name": "guzzlehttp/guzzle",
             "version": "6.5.3",
             "source": {
@@ -761,6 +750,12 @@
                 "swagger",
                 "test",
                 "view"
+            ],
+            "funding": [
+                {
+                    "url": "https://opencollective.com/infyomlabs",
+                    "type": "open_collective"
+                }
             ],
             "time": "2020-04-24T09:17:43+00:00"
         },
@@ -1913,11 +1908,7 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
             "time": "2020-04-20T15:05:43+00:00"
-=======
-            "time": "2020-03-31T13:43:19+00:00"
->>>>>>> avancando no cadastro de usuario pelo formulario dinamico
         },
         {
             "name": "nikic/php-parser",
@@ -2400,8 +2391,6 @@
             "time": "2017-02-14T16:28:37+00:00"
         },
         {
-<<<<<<< HEAD
-=======
             "name": "psr/http-factory",
             "version": "1.0.1",
             "source": {
@@ -2454,7 +2443,6 @@
             "time": "2019-04-30T12:38:16+00:00"
         },
         {
->>>>>>> 9a7847cb2516bba520ab55763abeed5ea864a096
             "name": "psr/http-message",
             "version": "1.0.1",
             "source": {
