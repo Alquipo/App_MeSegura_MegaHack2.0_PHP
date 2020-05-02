@@ -20,6 +20,8 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->middleware('verified');
 
+Route::post('/user/register', 'UserController@register')->name('user.register');
+
 Route::resource('categorias', 'CategoriaController');
 
 Route::resource('receitas', 'ReceitaController');

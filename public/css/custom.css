@@ -17,7 +17,11 @@
     background-color: rgb(76, 175, 80); 
     color: rgb(76, 175, 80);
     
-    
+ }   
+.fundo {
+    background-color: #DCD6C8;
+    border-radius: 5px;
+    padding: 1.15rem
 }
 
 

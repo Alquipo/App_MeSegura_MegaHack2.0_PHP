@@ -17,6 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+<<<<<<< HEAD
 Route::post('/receberchat', 'ChatReceiverController@index');
 
 Route::post('/chat-bot', 'ChatBotController@listenToReplies');
@@ -25,3 +26,6 @@ Route::get( '/lembrete-zapzap', 'API\ReminderWhatsAppController@index' );
 
 Route::post('/bot', 'BotController@store')->name('bot.store');
 
+=======
+Route::post('/user/register', 'UserController@register')->name('user.register');
+>>>>>>> 9a7847cb2516bba520ab55763abeed5ea864a096
