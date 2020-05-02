@@ -24,4 +24,21 @@
     padding: 1.15rem
 }
 
+.menu-app{
+    background-color: #FAFAFA;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.fa-menu-app
+{
+    font-size: 30px;
+}
+
+.label-menu-app
+{
+    font-size: 8px;
+
+}
+
 
