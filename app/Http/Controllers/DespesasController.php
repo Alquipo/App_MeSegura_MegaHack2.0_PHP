@@ -57,9 +57,9 @@ class DespesasController extends AppBaseController
                 
         $despesas = Despesas::create($input);
 
-        Flash::success('Despesas salvo com sucesso.');
+        Flash::success('Despesa salva com sucesso.');
 
-        return redirect(route('despesas.index'));
+        return redirect(url('home'));
     }
 
     /**
@@ -75,7 +75,7 @@ class DespesasController extends AppBaseController
         $despesas = Despesas::find($id);
 
         if (empty($despesas)) {
-            Flash::error('Despesas não encontrado.');
+            Flash::error('Despesa não encontrad.');
 
             return redirect(route('despesas.index'));
         }
@@ -95,10 +95,10 @@ class DespesasController extends AppBaseController
         /** @var Despesas $despesas */
         $despesas = Despesas::find($id);
 
-        $categorias = Categoria::where('tipo', 'R');
+        $categorias = Categoria::where('tipo', 'D');
 
         if (empty($despesas)) {
-            Flash::error('Despesas não encontrado.');
+            Flash::error('Despesa não encontrada.');
 
             return redirect(route('despesas.index'));
         }
@@ -120,7 +120,7 @@ class DespesasController extends AppBaseController
         $despesas = Despesas::find($id);
 
         if (empty($despesas)) {
-            Flash::error('Despesas não encontrado.');
+            Flash::error('Despesa não encontrada.');
 
             return redirect(route('despesas.index'));
         }
@@ -128,7 +128,7 @@ class DespesasController extends AppBaseController
         $despesas->fill($request->all());
         $despesas->save();
 
-        Flash::success('Despesas atualizado com sucesso.');
+        Flash::success('Despesa atualizada com sucesso.');
 
         return redirect(route('despesas.index'));
     }
@@ -148,14 +148,14 @@ class DespesasController extends AppBaseController
         $despesas = Despesas::find($id);
 
         if (empty($despesas)) {
-            Flash::error('Despesas não encontrado.');
+            Flash::error('Despesa não encontrada.');
 
             return redirect(route('despesas.index'));
         }
 
         $despesas->delete();
 
-        Flash::success('Despesas excluído com sucesso.');
+        Flash::success('Despesa excluída com sucesso.');
 
         return redirect(route('despesas.index'));
     }
