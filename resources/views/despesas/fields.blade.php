@@ -47,6 +47,7 @@
 </div>
 
 <div class="form-group col-12">
+    {!! Form::hidden('efetuada', 0) !!}
     {!! Form::label('efetuada', 'Efetuada:', ) !!}
     {!! Form::checkbox('efetuada', 1, null,  ['data-toggle' => 'toggle', 'data-onstyle' => 'secondary', 'data-on' => 'Sim', 'data-off' => 'Não']) !!}
 </div>

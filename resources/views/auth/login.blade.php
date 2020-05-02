@@ -89,8 +89,8 @@
         <div class="card fundo">
 
             <div class="card-body">
-            <div class="row align-items-center">
-                <h2 class="card-title">MESegura</h2>    
+            <div class="row d-flex justify-content-center">
+                <h2 class="card-title ">MESegura</h2>    
             </div>
             
             <form action="{{url('/login')}}" method="POST" accept-charset="utf-8">

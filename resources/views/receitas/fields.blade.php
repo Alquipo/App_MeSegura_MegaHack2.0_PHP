@@ -48,14 +48,8 @@
 </div>
 
 <div class="form-group col-12">
-   {{--  <div class="custom-control custom-switch">
-        {!! Form::label('efetuada', 'Efetuada:', ['class' => 'custom-control-label']) !!}
-        {!! Form::checkbox('efetuada', 1, null,  ['class' => 'custom-control-input']) !!}
-    </div> --}}
-    
-
     {{-- <label class="checkbox-inline"> --}}
-        {{-- {!! Form::hidden('efetuada', 0) !!} --}}
+        {!! Form::hidden('efetuada', 0) !!}
         {!! Form::label('efetuada', 'Efetuada:', ) !!}
         {!! Form::checkbox('efetuada', 1, null,  ['data-toggle' => 'toggle', 'data-onstyle' => 'secondary', 'data-on' => 'Sim', 'data-off' => 'Não']) !!}
     {{-- </label> --}}
