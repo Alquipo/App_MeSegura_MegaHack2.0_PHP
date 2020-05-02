@@ -13,10 +13,7 @@ class ChatReceiverController extends Controller
 {
     public function index()
     {
-        $response = new MessagingResponse();
-        $response->message("The Robots are coming! Head for the hills!");
-        echo $response;
-        
+              
         $response = new MessagingResponse();
         $guess = $_REQUEST['Body'];
         $pick = rand(1, 5);
