@@ -1,3 +1,9 @@
+.link,.link:hover{
+    text-decoration: none;
+    color: inherit;
+}
+
+
 .status-span {
     width: 14px;
     height: 14px;
@@ -26,7 +32,7 @@
 
 .menu-app{
     background-color: #FAFAFA;
-    border-radius: 10px;
+    border-radius: 100px;
     padding: 10px;
 }
 
@@ -46,6 +52,7 @@
     border-radius: 20px;
     padding: 15px;
 }
+
 
 .valores-home
 {

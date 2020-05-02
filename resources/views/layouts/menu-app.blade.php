@@ -3,12 +3,14 @@
 		<div class="row">
 			<div class="col-3">
 				<div class="row row justify-content-cente text-center">
-					<div class="col-12">
-						<i class="fa fa-money fa-menu-app" aria-hidden="true"></i>
-					</div>
-					<div class="col-12" style="padding: 0px;">
-					<span class="label-menu-app">Carteira</span>
-					</div>
+					<a href="/home" class="col-12 link">
+						<div>
+							<i class="fa fa-money fa-menu-app" aria-hidden="true"></i>
+						</div>
+						<div style="padding: 0px;">
+							<span class="label-menu-app">Carteira</span>
+						</div>
+					</a>
 				</div>
 			</div>
 			<div class="col-3">
