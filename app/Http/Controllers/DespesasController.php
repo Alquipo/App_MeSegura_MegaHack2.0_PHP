@@ -36,7 +36,7 @@ class DespesasController extends AppBaseController
      */
     public function create()
     {
-        $categorias = Categoria::where('tipo', 'R');
+        $categorias = Categoria::where('tipo', 'D');
 
         return view('despesas.create')->with('categorias', $categorias);;
     }

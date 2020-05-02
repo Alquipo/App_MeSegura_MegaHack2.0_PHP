@@ -25,3 +25,8 @@ Route::resource('categorias', 'CategoriaController');
 Route::resource('receitas', 'ReceitaController');
 
 Route::resource('despesas', 'DespesasController');
+
+Route::get('enviarchat', 'ChatSendController@index');
+
+
+
