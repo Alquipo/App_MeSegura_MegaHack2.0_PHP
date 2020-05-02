@@ -41,4 +41,20 @@
 
 }
 
+.top-home{
+    background-color: #5C8A9A;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.valores-home
+{
+    font-size: 10px;
+    color:#FAFAFA;
+    /*font-family: 'Source Sans Pro',sans-serif;*/
+}
+
+.button-home-receita,.button-home-despesa{
+    border-radius: 18px; 
+}
 
