@@ -28,7 +28,8 @@ class Categoria extends Model
     public $fillable = [
         'nome',
         'ativo',
-        'tipo'
+        'tipo',
+        'icone'
     ];
 
     /**

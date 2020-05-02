@@ -18,6 +18,7 @@ class CreateCategoriasTable extends Migration
             $table->string('nome');
             $table->boolean('ativo')->default(1);
             $table->enum('tipo', ['R','D','O']);
+            $table->string('icone')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

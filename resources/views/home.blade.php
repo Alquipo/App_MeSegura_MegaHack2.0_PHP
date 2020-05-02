@@ -13,12 +13,16 @@
     			</div>
     			<div class="row justify-content-between">
     				<div class="col-4">
-    					<span class="valores-home">RECEITA</span><br>
-    					<strong><span class="valores-home">R$ 2100,00</span></strong>
+    					<a href="{{route('receitas.index')}}" title="">
+	    					<span class="valores-home">RECEITA</span><br>
+	    					<strong><span class="valores-home">R$ 2100,00</span></strong>
+    					</a>
     				</div>
     				<div class="col-4">
-    					<span class="valores-home">DESPESA</span><br>
-    					<strong><span class="valores-home">R$ 1800,00</span></strong>
+    					<a href="{{route('despesas.index')}}" title="">
+	    					<span class="valores-home">DESPESA</span><br>
+	    					<strong><span class="valores-home">R$ 1800,00</span></strong>
+    					</a>
     				</div>
     			</div>
     		</div>
