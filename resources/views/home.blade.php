@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+	@include('flash::message')
     <div class="row top-home text-center">
     		<div class="col-12">
     			<div class="row justify-content-center">

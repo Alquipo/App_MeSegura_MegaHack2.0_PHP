@@ -54,7 +54,7 @@ class ReceitaController extends AppBaseController
         /** @var Receita $receita */
         $receita = Receita::create($input);
 
-        Flash::success('Receita salvo com sucesso.');
+        Flash::success('Receita salva com sucesso.');
 
         return redirect(url('home'));
     }
