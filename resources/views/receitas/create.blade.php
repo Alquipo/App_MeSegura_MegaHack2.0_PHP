@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('content')
     <section class="content-header">
@@ -10,13 +10,11 @@
         @include('adminlte-templates::common.errors')
         <div class="box box-primary">
             <div class="box-body">
-                <div class="row">
                     {!! Form::open(['route' => 'receitas.store']) !!}
 
                         @include('receitas.fields')
 
                     {!! Form::close() !!}
-                </div>
             </div>
         </div>
     </div>

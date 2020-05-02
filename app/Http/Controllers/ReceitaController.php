@@ -56,7 +56,7 @@ class ReceitaController extends AppBaseController
 
         Flash::success('Receita salvo com sucesso.');
 
-        return redirect(route('receitas.index'));
+        return redirect(url('home'));
     }
 
     /**

@@ -58,3 +58,42 @@
     border-radius: 18px; 
 }
 
+.label-termometros{
+    font-size: 8px;
+}
+
+.barra-verde,.barra-amarela,.barra-laranja,.barra-vermelha{
+    /*background-color: #5EB43E;*/
+    border-radius: 22px;
+    width: 100px;
+    height: 20px;
+    border-width: 1px;
+    border-style: solid;
+    position: relative;
+}
+
+.barra-verde
+{
+    border-color: #5EB43E;   
+}
+
+.barra-amarela
+{
+    border-color: #FCC60C;
+}
+
+.barra-laranja
+{
+    border-color: #F7A00E;
+
+}
+
+.barra-vermelha
+{
+    border-color: #dc3545;
+}
+
+/*.fundo-vazio
+{
+    background-color: #DCD6C8; !important
+}*/
