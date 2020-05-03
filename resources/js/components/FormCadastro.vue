@@ -1,60 +1,127 @@
 <template>
     <div>
 
-         <b-form @submit="onSubmit" @reset="onReset" v-if="show" v-bind:action="this.postRoute">    
-        <transition name="slide-fade" mode="out-in">
-            <form-group 
-              index="0"
-              v-model="form.email"
-              name="email"
-              type="email"
-              placeholder="digite seu e-mail"
-              labeltext="Vamos começar, qual o seu email?"
-              key="0"
-              v-if="docIndex == 0">
-              
-            </form-group>
-            <form-group 
-                index="1"
-              v-model="form.password"
-              name="password"
-              type="password"
-              placeholder="digite sua senha"
-              labeltext="Agora, defina sua senha"
-              key="1"
-              v-if="docIndex == 1">
-            </form-group>
-            <form-group 
-                index="2"
-              v-model="form.nome"
-              name="nome"
-              type="text"
-              placeholder="digite seu nome"
-              labeltext="Me diz, como gostaria de ser chamado?"
-              key="2"
-              v-if="docIndex == 2">
-              
-            </form-group>
-            <form-group 
-                index="3"
-              v-model="form.idade"
-              name="idade"
-              type="number"
-              placeholder="digite sua idade"
-              labeltext="Quantos anos você tem?"
-              key="3"
-              v-if="docIndex == 3">
-            </form-group>
-            <form-group 
-                index="4"
-              v-model="form.celular"
-              name="celular"
-              type="text"
-              placeholder="número de celular"
-              labeltext="Você pode, todo dia, fazer o controle das finanças pelo aplicativo e também pelo Whastapp"
-              key="4"
-              v-if="docIndex == 4">
-            </form-group>
+
+        <b-form @submit="onSubmit" @reset="onReset" v-if="show" v-bind:action="this.postRoute">    
+            <b-container class="bv-example-row bv-example-row-flex-cols">
+                <b-row align-v="start" style="min-height: 442px;">
+                <transition name="slide-fade" mode="out-in">
+                    
+                        <!-- <form-group 
+                          v-model="form.email"
+                          name="email"
+                          type="email"
+                          placeholder="digite seu e-mail"
+                          labeltext="Vamos começar, qual o seu email?"
+                          key="0"
+                          index="0"
+                          v-if="docIndex == 0"
+                          >
+                          
+                        </form-group> -->
+
+                        <b-form-group
+                            key="0"
+                            index="0"
+                            v-if="docIndex == 0"
+                        >
+                            <b-row align-v="start">
+                                <label class="label-form">Vamos começar, qual o seu email?</label>
+                            </b-row>
+                           <b-row align-v="center">
+                               <b-form-input
+                                    
+                                  required
+                                  v-model="form.email"
+                                  placeholder="digite seu e-mail"
+                                  type="tel"
+                                  name="email"
+                                  class="input-form-control"
+                                ></b-form-input>
+                            </b-row>
+                        </b-form-group>
+
+
+                        <b-form-group
+                            key="1"
+                            index="1"
+                            v-if="docIndex == 1"
+                        >
+                            <b-row align-v="start">
+                                <label class="label-form">Agora, defina sua senha</label>
+                            </b-row>
+                           <b-row align-v="center">
+                               <b-form-input
+                                  required
+                                  v-model="form.password"
+                                  placeholder="digite sua senha"
+                                  type="password"
+                                  name="password"
+                                  class="input-form-control"
+                                ></b-form-input>
+                            </b-row>
+                        </b-form-group>
+
+                        <b-form-group
+                            key="2"
+                            index="2"
+                            v-if="docIndex == 2"
+                        >
+                            <b-row align-v="start">
+                                <label class="label-form">Me diz, como gostaria que lhe chamássemos?</label>
+                            </b-row>
+                           <b-row align-v="center">
+                               <b-form-input
+                                  required
+                                  v-model="form.nome"
+                                  placeholder="digite sua nome"
+                                  type="text"
+                                  name="nome"
+                                  class="input-form-control"
+                                ></b-form-input>
+                            </b-row>
+                        </b-form-group>
+
+                        <b-form-group
+                            key="3"
+                            index="3"
+                            v-if="docIndex == 3"
+                        >
+                            <b-row align-v="start">
+                                <label class="label-form">Quantos anos você?</label>
+                            </b-row>
+                           <b-row align-v="center">
+                               <b-form-input
+                                  required
+                                  v-model="form.idade"
+                                  placeholder="digite sua idade"
+                                  type="text"
+                                  name="idade"
+                                  class="input-form-control"
+                                ></b-form-input>
+                            </b-row>
+                        </b-form-group>
+
+                        <b-form-group
+                            key="4"
+                            index="4"
+                            v-if="docIndex == 4"
+                        >
+                            <b-row align-v="start">
+                                <label class="label-form">Você pode, todo dia, fazer o controle das finanças pelo aplicativo e também pelo Whastapp</label>
+                            </b-row>
+                           <b-row align-v="center">
+                               <b-form-input
+                                  required
+                                  v-model="form.celular"
+                                  placeholder="número de celular"
+                                  type="text"
+                                  name="celular"
+                                  class="input-form-control"
+                                  v-mask="'(##) #####-####'" 
+                                ></b-form-input>
+                            </b-row>
+                        </b-form-group>
 
 
         </transition>
@@ -73,8 +140,10 @@
 
 <script>
     import FormGroup from './FormGroup'
+    import {mask} from 'vue-the-mask'
 
     export default {
+        name: 'form-cadastro',
         props: ['postRoute'],
         data: function() {
             return {
@@ -90,7 +159,8 @@
             };
         },
         components: {
-            FormGroup
+            FormGroup,
+            mask
         },
         mounted() {
             this.show = true;
@@ -159,5 +229,18 @@
 
 .button-margin{
     margin-top: 5rem;
+}
+
+.label-form{
+        font-size: 2em;
+        color: #8D8C88;
+        margin-bottom: .5rem;
+        font-weight: 500;
+        line-height: 1.2;
+
+    }
+
+.input-form-control{
+  margin-top: 3rem;
 }
 </style>

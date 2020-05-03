@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -51,5 +52,21 @@ class User extends Authenticatable
     public function despesas()
     {
           return $this->hasMany('App\Models\Despesas');
+    }
+
+    public function setCelularAttribute($value)
+    {
+        if (Str::contains($value, '('))
+        {
+            $resultado = str_replace('(', '', $value);
+            $resultado = str_replace(') ', '', $resultado);
+            $resultado = str_replace('-', '', $resultado);
+
+            $this->attributes['celular'] = $resultado;
+        }
+        else
+        {
+            $this->attributes['celular'] = $value;   
+        }
     }
 }
