@@ -28,7 +28,7 @@
             <br>
             
                 <div class="col-md-4 offset-md-4 col-sm-12">
-                    <div class="card fundo">
+                    <div class="card fundo" style="background-image: url('{{asset('img/fundo.jpeg')}}')">
                         <div id="form-cadastro">
                             <div class="card-body">
                                 <form-cadastro postRoute="{{url('/register')}}"></form-cadastro>

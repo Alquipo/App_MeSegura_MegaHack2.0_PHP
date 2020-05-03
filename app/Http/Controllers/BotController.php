@@ -79,7 +79,7 @@ class BotController extends Controller
 
      public function storeDespesa(Request $request)
     {
-
+        // return ($request->all());
         $input = json_decode($request->get('Memory'));
         $respostas = $input->twilio->collected_data->collect_despesa->answers;
 

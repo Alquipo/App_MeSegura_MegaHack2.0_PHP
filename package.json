@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "bootstrap-vue": "^2.13.0",
+        "vue-sweetalert2": "^3.0.3",
         "vue-the-mask": "^0.11.1"
     }
 }

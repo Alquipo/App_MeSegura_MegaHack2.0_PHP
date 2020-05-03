@@ -125,6 +125,8 @@
 
 
         </transition>
+        </b-row>
+        </b-container>
         <b-container class="button-margin">
             <b-row align-h="between">
                 <b-button variant="secondary" href="/login" v-if="docIndex == 0">Já tenho cadastro</b-button>
@@ -174,6 +176,7 @@
             this.errors = {};
               axios.post('/user/register', this.form).then(response => {
                 console.log('Message sent!');
+                this.$swal('Cadastro realizado com sucesso!', 'Agora você pode logar por esse <a href="/login">link</a> ou enviar uma mensagem para nossa assistente virtual!' , 'success');
               }).catch(error => {
                 if (error.response.status === 422) {
                   this.errors = error.response.data.errors || {};
