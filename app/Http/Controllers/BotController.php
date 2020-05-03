@@ -36,12 +36,12 @@ class BotController extends Controller
 
     public function storeReceita(Request $request)
     {
-
+        return ($request->all());
         $input = json_decode($request->get('Memory'));
         $respostas = $input->twilio->collected_data->collect_receita->answers;
 
         switch ($respostas->categoria->answer){
-            case "salário":
+            case "salario" || "salário":
                 $respostas->categoria_id = 1;
                 break;
             case "investimentos":
