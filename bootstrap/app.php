@@ -1,3 +1,4 @@
+
 <?php
 
 /*
@@ -11,13 +12,10 @@
 |
 */
 
-// $app = new Illuminate\Foundation\Application(
-//     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
-// );
-
-$app = new App\GoPublic(
- realpath(__DIR__.'/../')
+$app = new Illuminate\Foundation\Application(
+    $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
+
 
 /*
 |--------------------------------------------------------------------------
