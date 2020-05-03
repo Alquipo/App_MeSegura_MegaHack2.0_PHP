@@ -47,6 +47,13 @@ class UsersTableSeeder extends Seeder
                 'celular' => '6281275096',
                 'password' => '1234'
             ]);
+        User::create(
+            [
+                'nome' => 'Petterson',
+                'email' => 'petterson@teste',
+                'celular' => '22988463973',
+                'password' => '1234'
+            ]);
         
         
     }

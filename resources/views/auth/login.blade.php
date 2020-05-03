@@ -86,7 +86,7 @@
     <br>
     <div class="col-md-4 offset-md-4 col-sm-12">
 
-        <div class="card fundo">
+        <div class="card fundo" style="background-image: url('{{asset('img/fundo.jpeg')}}');min-height: 640px; min-width: 360px;">
 
             <div class="card-body">
             <div class="row d-flex justify-content-center">
