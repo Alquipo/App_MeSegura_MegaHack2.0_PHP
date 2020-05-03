@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateMetaRequest;
 use App\Http\Controllers\AppBaseController;
 use App\Models\Meta;
 use App\Models\Categoria;
+use App\User;
 
 use Illuminate\Http\Request;
 use Flash;
@@ -94,8 +95,11 @@ class MetaController extends AppBaseController
         /** @var Meta $meta */
         $meta = Meta::find($id);
 
+        
+        //dd($meta);
         $categorias = Categoria::where('tipo', 'D');
 
+                
 
         if (empty($meta)) {
             Flash::error('Meta não encontrado.');

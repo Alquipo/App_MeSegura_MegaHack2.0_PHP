@@ -20,34 +20,34 @@
         </div> --}}
         <div class="row align-items-center">
             @foreach($metas as $meta)
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body" style="padding-left: 8px; padding-right: 8px;">
-                        <div class="row">
-                            <div class="col-6">
-                                <h5 class="card-title">{{$meta->categoria->nome}}
-                                <i class="fa fa-{{$meta->categoria->icone}}" title="{{$meta->categoria->nome}}" aria-hidden="true"></i>
-                                {{-- @if($receita->efetuada)
-                                    <span class="status-span bg" title="Efetuada"></span>
-                                 @else
-                                    <span class="status-span br" title="Pendente"></span>
-                                 @endif --}}
-                                 </h5>
-                                {{-- <h6 class="card-subtitle mb-2 muted">{{$meta->data_formatada}}</h6> --}}
-                            </div>
-                            <div class="col-6">
-                                <span>R$ {{$meta->valor_meta_formatado}}</span><br>
-                                {!! Form::open(['route' => ['metas.destroy', $meta->id], 'method' => 'delete']) !!}
-                                <div class='btn-group'>
-                                    <a href="{{ route('metas.edit', [$meta->id]) }}" class='btn btn-secondary btn-xs' title="Editar"><i class="fa fa-pencil"></i></a> 
-                                    {!! Form::button('<i class="fa fa-trash" title="Excluir"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Você tem certeza?')"]) !!}
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body" style="padding-left: 8px; padding-right: 8px;">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="card-title">{{$meta->categoria->nome}}
+                                    <i class="fa fa-{{$meta->categoria->icone}}" title="{{$meta->categoria->nome}}" aria-hidden="true"></i>
+                                    {{-- @if($receita->efetuada)
+                                        <span class="status-span bg" title="Efetuada"></span>
+                                    @else
+                                        <span class="status-span br" title="Pendente"></span>
+                                    @endif --}}
+                                    </h5>
+                                    {{-- <h6 class="card-subtitle mb-2 muted">{{$meta->data_formatada}}</h6> --}}
                                 </div>
-                                {!! Form::close() !!}
-                            </div>  
+                                <div class="col-6">
+                                    <span>R$ {{$meta->valor_meta_formatado}}</span><br>
+                                    {!! Form::open(['route' => ['metas.destroy', $meta->id], 'method' => 'delete']) !!}
+                                    <div class='btn-group'>
+                                        <a href="{{ route('metas.edit', [$meta->id]) }}" class='btn btn-secondary btn-xs' title="Editar"><i class="fa fa-pencil"></i></a> 
+                                        {!! Form::button('<i class="fa fa-trash" title="Excluir"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Você tem certeza?')"]) !!}
+                                    </div>
+                                    {!! Form::close() !!}
+                                </div>  
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             @endforeach
         </div>
         <br>

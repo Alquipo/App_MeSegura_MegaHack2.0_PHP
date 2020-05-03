@@ -8,6 +8,7 @@ use App\Traits\Multitenantable;
 use \Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
+use App\User;
 
 /**
  * Class Meta
@@ -92,4 +93,6 @@ class Meta extends Model
         return number_format($this->attributes['valor'], 2, ',', '.');
         
     }
+
+   
 }
