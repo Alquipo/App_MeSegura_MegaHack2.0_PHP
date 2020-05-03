@@ -45,7 +45,7 @@ class BotController extends Controller
         $user = User::where('celular', $numero)->first();
 
         switch ($respostas->categoria->answer){
-            case "salario" || "salário":
+            case "salário":
                 $respostas->categoria_id = 1;
                 break;
             case "investimentos":
@@ -92,10 +92,10 @@ class BotController extends Controller
             case "alimentação":
                 $respostas->categoria_id = 5;
                 break;
-            case "saude" || "saúde":
+            case "saúde":
                 $respostas->categoria_id = 6;
                 break;
-            case "educacao" || "educação" || "educacão":
+            case "educação":
                 $respostas->categoria_id = 7;
                 break;
             case "transporte":
@@ -143,10 +143,10 @@ class BotController extends Controller
             case "alimentação":
                 $respostas->categoria_id = 5;
                 break;
-            case "saude" || "saúde":
+            case "saúde":
                 $respostas->categoria_id = 6;
                 break;
-            case "educacao" || "educação" || "educacão":
+            case "educação":
                 $respostas->categoria_id = 7;
                 break;
             case "transporte":
