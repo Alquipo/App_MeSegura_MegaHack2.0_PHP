@@ -42,4 +42,14 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = bcrypt($value);
     }
+
+    public function receitas()
+    {
+          return $this->hasMany('App\Models\Receita');
+    }
+
+    public function despesas()
+    {
+          return $this->hasMany('App\Models\Despesas');
+    }
 }

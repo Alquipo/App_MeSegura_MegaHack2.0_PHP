@@ -40,6 +40,8 @@ class BotController extends Controller
         // return ($request->all());
         $input = json_decode($request->get('Memory'));
         $respostas = $input->twilio->collected_data->collect_receita->answers;
+        $numero = str_replace('whatsapp:+55', '', $request->get('UserIdentifier'));
+        $user = User::where('celular', $numero)->first();
 
         switch ($respostas->categoria->answer){
             case "salario" || "salário":
@@ -58,7 +60,7 @@ class BotController extends Controller
                 $respostas->categoria_id = 4;
         }
 
-        $respostas->user_id = 1;
+        // $respostas->user_id = $input->user_id;
         $respostas->data = Carbon::now()->toDateString();
 
         // return (json_decode(json_encode($respostas), true));
@@ -69,7 +71,7 @@ class BotController extends Controller
                 'valor'=> $respostas->valor->answer,
                 'data' => $respostas->data,
                 'categoria_id' => $respostas->categoria_id,
-                'user_id' => $respostas->user_id,
+                'user_id' => $user->id,
             ]
         );
          return json_encode(['actions'=>[['say'=> 'Receita de '.$receita->categoria->nome.' cadastrada com sucesso!']]]);
@@ -80,6 +82,9 @@ class BotController extends Controller
 
         $input = json_decode($request->get('Memory'));
         $respostas = $input->twilio->collected_data->collect_despesa->answers;
+
+        $numero = str_replace('whatsapp:+55', '', $request->get('UserIdentifier'));
+        $user = User::where('celular', $numero)->first();
 
 
         switch ($respostas->categoria->answer){
@@ -108,7 +113,7 @@ class BotController extends Controller
                 $respostas->categoria_id = 11;
         }
 
-        $respostas->user_id = 1;
+        // $respostas->user_id = $input->user_id;
         $respostas->data = Carbon::now()->toDateString();
 
         // return (json_decode(json_encode($respostas), true));
@@ -119,7 +124,7 @@ class BotController extends Controller
                 'valor'=> $respostas->valor->answer,
                 'data' => $respostas->data,
                 'categoria_id' => $respostas->categoria_id,
-                'user_id' => $respostas->user_id,
+                'user_id' => $user->id,
             ]
         );
          return json_encode(['actions'=>[['say'=> 'Despesa com '.$despesa->categoria->nome.' cadastrada com sucesso!']]]);
@@ -140,7 +145,7 @@ class BotController extends Controller
                         'user_id' => $user->id,
                         'user_nome' => $user->nome
                     ]]
-                ]
+                 ]
                 ]);
         }
         else
@@ -148,6 +153,46 @@ class BotController extends Controller
             return json_encode(['actions'=>[['say'=> 'Olá! Verifiquei que você ainda não é cadastrado na nossa plataforma. Acesse o link para se cadastrar. http://be4d0c67.ngrok.io']]]);
         }
 
+    }
+
+    public function listarReceitas(Request $request)
+    {   
+        $numero = str_replace('whatsapp:+55', '', $request->get('UserIdentifier'));
+        $user = User::where('celular', $numero)->first();
+        $receitas = $user->receitas;
+
+        $saida = '';
+        foreach($receitas as $receita)
+        {
+            $saida =  $saida . "\n" .  $receita->nome . " | " . $receita->data_formatada . " | " . $receita->categoria->nome . " | " . $receita->valor_receita_formatado ;
+        }
+
+        // return $saida;
+
+        return json_encode(['actions' =>
+                [
+                    ['say' => 'Estas são as suas receitas:' . $saida]]
+            ]);
+    }
+
+    public function listarDespesas(Request $request)
+    {   
+        $numero = str_replace('whatsapp:+55', '', $request->get('UserIdentifier'));
+        $user = User::where('celular', $numero)->first();
+        $despesas = $user->despesas;
+
+        $saida = '';
+        foreach($despesas as $despesa)
+        {
+            $saida =  $saida . "\n" .  $despesa->nome . " | " . $despesa->data_formatada . " | " . $despesa->categoria->nome . " | " . $despesa->valor_despesa_formatado ;
+        }
+
+        // return $saida;
+
+        return json_encode(['actions' =>
+                [
+                    ['say' => 'Estas são as suas despesas:' . $saida]]
+            ]);
     }
     
 }
