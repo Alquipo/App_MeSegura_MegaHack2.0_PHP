@@ -49,7 +49,8 @@ class HomeController extends Controller
         $total_meta= Meta::get('valor');
         $total_meta= Arr::pluck($total_meta, 'valor');    
      
-                
+         
+       // dd($metas->valor);
 
         return view('home',['total_receita' => $total_receita, 'total_despesa' => $total_despesa, 'saldo_total' => $saldo_total])->with('metas', $metas)->with('total_despesa_meta', $total_despesa_meta)->with('total_meta', $total_meta);
 
