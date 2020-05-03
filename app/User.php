@@ -54,6 +54,11 @@ class User extends Authenticatable
           return $this->hasMany('App\Models\Despesas');
     }
 
+    public function metas()
+    {
+          return $this->hasMany('App\Models\Meta');
+    }
+
     public function setCelularAttribute($value)
     {
         if (Str::contains($value, '('))

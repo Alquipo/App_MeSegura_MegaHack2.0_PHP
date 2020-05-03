@@ -9,6 +9,7 @@ use \Carbon\Carbon;
 use App\Models\Receita;
 use App\Models\Despesas;
 use App\User;
+use App\Models\Meta;
 
 class BotController extends Controller
 {
@@ -91,10 +92,10 @@ class BotController extends Controller
             case "alimentação":
                 $respostas->categoria_id = 5;
                 break;
-            case "saude":
+            case "saude" || "saúde":
                 $respostas->categoria_id = 6;
                 break;
-            case "educacao":
+            case "educacao" || "educação" || "educacão":
                 $respostas->categoria_id = 7;
                 break;
             case "transporte":
@@ -193,6 +194,39 @@ class BotController extends Controller
                 [
                     ['say' => 'Estas são as suas despesas:' . $saida]]
             ]);
+    }
+
+    public function listarMetas(Request $request)
+    {
+        $numero = str_replace('whatsapp:+55', '', $request->get('UserIdentifier'));
+        $user = User::where('celular', $numero)->first();
+
+        $metas = $user->metas;
+        // return $metas;
+
+        $saida = "Nesse mês, você já gastou: \n" ;
+        // $total_metas = 0;
+        $total_geral_despesas = 0;
+
+        foreach($metas as $meta)
+        {
+            $total_despesas = Despesas::where('categoria_id', $meta->categoria_id)->sum('valor');
+            $porcentagem = ($total_despesas / $meta->valor) * 100;
+            $saida = $saida . $porcentagem ."% de ". $meta->categoria->nome." = R$ ".$total_despesas." de ". $meta->valor . "\n";
+            $total_geral_despesas += $total_despesas;
+        }
+
+        $total_metas = Meta::sum('valor');
+
+        $porcentagem_total = ($total_geral_despesas / $total_metas) * 100;
+
+        $saida = $saida . "\n" . "Você já gastou ".number_format($porcentagem_total, 2, '.', ',')."% da sua meta total de gastos = R$ ".$total_geral_despesas." de ". $total_metas; 
+
+        return json_encode(['actions' =>
+                [
+                    ['say' => $saida]]
+            ]);   
+
     }
     
 }

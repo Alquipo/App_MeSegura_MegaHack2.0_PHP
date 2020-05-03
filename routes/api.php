@@ -33,5 +33,7 @@ Route::get('/receitas', 'BotController@listarReceitas')->name('bot.index.receita
 Route::post('/despesas', 'BotController@storeDespesa')->name('bot.store.despesa');
 Route::get('/despesas', 'BotController@listarDespesas')->name('bot.index.despesa');
 
+Route::get('/metas', 'BotController@listarMetas')->name('bot.index.meta');
+
 Route::get('/reconhecer', 'BotController@reconhecer');
 
