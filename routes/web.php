@@ -35,6 +35,8 @@ Route::resource('metas', 'MetaController');
 
 Route::get('enviarchat', 'ChatSendController@index');
 
+Route::get('reconhecer', 'ChatSendController@reconhecer');
+
 
 
 

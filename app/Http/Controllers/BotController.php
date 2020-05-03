@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use \Carbon\Carbon;
 use App\Models\Receita;
 use App\Models\Despesas;
+use App\User;
 
 class BotController extends Controller
 {
@@ -122,6 +123,31 @@ class BotController extends Controller
             ]
         );
          return json_encode(['actions'=>[['say'=> 'Despesa com '.$despesa->categoria->nome.' cadastrada com sucesso!']]]);
+    }
+
+    public function reconhecer(Request $request)
+    {
+        $numero = str_replace('whatsapp:+55', '', $request->get('UserIdentifier'));
+        $user = User::where('celular', $numero)->first();
+
+        if($user != null)
+        {
+            return json_encode(
+                ['actions'=>[
+                    ['say'=> 'Olá '.$user->nome.' ! Deseja cadastrar uma Receita ou Despesa? Ou quer visualizar suas metas?'],
+                    ['listen' => true],
+                    ['remember' => [
+                        'user_id' => $user->id,
+                        'user_nome' => $user->nome
+                    ]]
+                ]
+                ]);
+        }
+        else
+        {
+            return json_encode(['actions'=>[['say'=> 'Olá! Verifiquei que você ainda não é cadastrado na nossa plataforma. Acesse o link para se cadastrar. http://be4d0c67.ngrok.io']]]);
+        }
+
     }
     
 }
