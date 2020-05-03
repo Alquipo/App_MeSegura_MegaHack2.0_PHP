@@ -47657,7 +47657,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.label-form[data-v-07bf0e80]{\n        font-size: 2em;\n        color: #8D8C88;\n        margin-bottom: .5rem;\n        font-weight: 500;\n        line-height: 1.2;\n}\n\n", ""]);
+exports.push([module.i, "\n.label-form[data-v-07bf0e80]{\n        font-size: 2em;\n        color: #8D8C88;\n        margin-bottom: .5rem;\n        font-weight: 500;\n        line-height: 1.2;\n}\n", ""]);
 
 // exports
 
