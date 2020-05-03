@@ -12,14 +12,14 @@
     				</div>
     			</div>
     			<div class="row justify-content-between">
-    				<div class="col-4">
-    					<a href="{{route('receitas.index')}}" title="">
+    				<div class="col-4 ">
+    					<a class="link" href="{{route('receitas.index')}}" title="">
 	    					<span class="valores-home">RECEITAS</span><br>
 	    					<strong><span class="valores-home">{{$total_receita}}</span></strong>
     					</a>
     				</div>
     				<div class="col-4">
-    					<a href="{{route('despesas.index')}}" title="">
+    					<a class="link" href="{{route('despesas.index')}}" title="">
 	    					<span class="valores-home">DESPESAS</span><br>
 						<strong><span class="valores-home">{{$total_despesa}}</span></strong>
     					</a>
