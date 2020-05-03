@@ -2042,6 +2042,8 @@ __webpack_require__.r(__webpack_exports__);
         if (error.response.status === 422) {
           _this.errors = error.response.data.errors || {};
         }
+
+        _this.$swal('Houve um erro!', 'Por favor, tente outra hora.', 'error');
       });
       console.log(this.errors);
     },

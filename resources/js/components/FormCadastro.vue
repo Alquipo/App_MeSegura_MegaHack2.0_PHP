@@ -181,6 +181,7 @@
                 if (error.response.status === 422) {
                   this.errors = error.response.data.errors || {};
                 }
+                this.$swal('Houve um erro!', 'Por favor, tente outra hora.' , 'error');
               });
               console.log(this.errors);
           },
