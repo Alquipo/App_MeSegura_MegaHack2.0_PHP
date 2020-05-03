@@ -114,21 +114,55 @@ class BotController extends Controller
                 $respostas->categoria_id = 11;
         }
 
+    public function storeMetas(Request $request)
+    {
+        // return ($request->all());
+        $input = json_decode($request->get('Memory'));
+        $respostas = $input->twilio->collected_data->collect_meta->answers;
+
+        $numero = str_replace('whatsapp:+55', '', $request->get('UserIdentifier'));
+        $user = User::where('celular', $numero)->first();
+
+
+        switch ($respostas->categoria->answer){
+            case "alimentação":
+                $respostas->categoria_id = 5;
+                break;
+            case "saude" || "saúde":
+                $respostas->categoria_id = 6;
+                break;
+            case "educacao" || "educação" || "educacão":
+                $respostas->categoria_id = 7;
+                break;
+            case "transporte":
+                $respostas->categoria_id = 8;
+                break;
+            case "moradia":
+                $respostas->categoria_id = 9;
+                break;
+            case "lazer":
+                $respostas->categoria_id = 10;
+                break;
+            case "outros":
+                $respostas->categoria_id = 11;
+                break;
+            default:
+                $respostas->categoria_id = 11;
+        }
+
         // $respostas->user_id = $input->user_id;
-        $respostas->data = Carbon::now()->toDateString();
 
         // return (json_decode(json_encode($respostas), true));
 
-        $despesa = Despesas::create(
+        $meta = Meta::create(
             [
                 'nome' => $respostas->categoria->answer,
                 'valor'=> $respostas->valor->answer,
-                'data' => $respostas->data,
                 'categoria_id' => $respostas->categoria_id,
                 'user_id' => $user->id,
             ]
         );
-         return json_encode(['actions'=>[['say'=> 'Despesa com '.$despesa->categoria->nome.' cadastrada com sucesso!']]]);
+         return json_encode(['actions'=>[['say'=> 'Meta com '.$meta->categoria->nome.' cadastrada com sucesso!']]]);
     }
 
     public function reconhecer(Request $request)

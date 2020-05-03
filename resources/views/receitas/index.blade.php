@@ -7,7 +7,8 @@
            <a class="btn btn-secondary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{{ route('receitas.create') }}">Adicionar Novo</a>
         </h1>
     </section>
-    <div class="content">
+    <br><br><br><br><br><br>
+    <div class="content" style="overflow-y: auto; overflow-x: hidden; height: 420px">
         <div class="clearfix"></div>
 
         @include('flash::message')
@@ -19,7 +20,7 @@
             </div>
         </div> --}}
 
-        <div class="row align-items-center">
+        <div class="row align-items-center" >
             @foreach($receitas as $receita)
             <div class="col-12">
                 <div class="card">
@@ -51,6 +52,8 @@
             </div>
             @endforeach
         </div>
+        
+    
         <br>
         <div class="text-center">
         

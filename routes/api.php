@@ -34,6 +34,7 @@ Route::post('/despesas', 'BotController@storeDespesa')->name('bot.store.despesa'
 Route::get('/despesas', 'BotController@listarDespesas')->name('bot.index.despesa');
 
 Route::get('/metas', 'BotController@listarMetas')->name('bot.index.meta');
+Route::post('/metas', 'BotController@storeDespesas')->name('bot.store.despesa');
 
 Route::get('/reconhecer', 'BotController@reconhecer');
 

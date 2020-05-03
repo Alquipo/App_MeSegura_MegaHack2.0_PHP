@@ -30,9 +30,16 @@
     
  }   
 .fundo {
+    background: url(../img/BG-Home.png) no-repeat;
     background-color: #DEDCDF;
+    
+
     border-radius: 5px;
     padding: 1.15rem
+}
+
+::-webkit-scrollbar {
+    width: 0px;
 }
 
 .menu-app{
@@ -57,7 +64,7 @@
 }
 
 .top-home{
-    background-color: #62A7C4;
+    /* background-color: #62A7C4; */
     border-radius: 20px;
     padding: 5px;
 }

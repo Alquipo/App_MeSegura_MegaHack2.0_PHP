@@ -1,5 +1,5 @@
-<div class="">
-	<div class="col-sm-12 col-md-12 ">
+<div>
+	<div class="col-sm-12 col-md-12 pt-1">
 		<div class="row">
 			<div class="col-3 menu-app rounded-circle bg-white p-2">
 				<div class="row d-flex justify-content-center p-2">

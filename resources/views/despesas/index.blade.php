@@ -7,7 +7,8 @@
            <a class="btn btn-secondary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{{ route('despesas.create') }}">Adicionar Nova</a>
         </h1>
     </section>
-    <div class="content">
+    <br><br><br><br><br><br>
+    <div class="content" style="overflow-y: auto; overflow-x: hidden; height: 420px">
         <div class="clearfix"></div>
 
         @include('flash::message')
