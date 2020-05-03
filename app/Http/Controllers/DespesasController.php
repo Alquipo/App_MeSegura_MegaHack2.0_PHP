@@ -75,7 +75,7 @@ class DespesasController extends AppBaseController
         $despesas = Despesas::find($id);
 
         if (empty($despesas)) {
-            Flash::error('Despesa não encontrad.');
+            Flash::error('Despesa não encontrada.');
 
             return redirect(route('despesas.index'));
         }

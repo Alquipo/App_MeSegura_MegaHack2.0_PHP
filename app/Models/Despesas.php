@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Traits\Multitenantable;
 use \Carbon\Carbon;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
+
 
 
 /**
@@ -82,7 +84,7 @@ class Despesas extends Model
      **/
     public function user()
     {
-        return $this->belongsTo(\App\Models\User::class, 'user_id', 'id');
+        return $this->belongsTo(\App\User::class, 'user_id', 'id');
     }
     public function getDataFormatadaAttribute($value)
     {
@@ -111,5 +113,26 @@ class Despesas extends Model
     {
         return number_format($this->attributes['valor'], 2, ',', '.');
         
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        Despesas::created(function ($despesa) {
+            $user =  $despesa->user['id'];
+        
+            DB::table('users')->where('id', $user)->decrement('saldo', $despesa->valor);  
+        });
+        Despesas::updated(function ($despesa) {
+            $user =  $despesa->user['id'];
+        
+            DB::table('users')->where('id', $user)->decrement('saldo', $despesa->valor);  
+        });
+        Despesas::updated(function ($despesa) {
+            $user =  $despesa->user['id'];
+        
+            DB::table('users')->where('id', $user)->imcrement('saldo', $despesa->valor);  
+        });
     }
 }

@@ -3,10 +3,14 @@
 namespace App\Models;
 
 use Eloquent as Model;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Traits\Multitenantable;
 use \Carbon\Carbon;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
+
+
 
 
 
@@ -83,7 +87,7 @@ class Receita extends Model
      **/
     public function user()
     {
-        return $this->belongsTo(\App\Models\User::class, 'user_id', 'id');
+        return $this->belongsTo(\App\User::class, 'user_id', 'id');
     }
 
     public function getDataFormatadaAttribute($value)
@@ -114,5 +118,26 @@ class Receita extends Model
     {
         return number_format($this->attributes['valor'], 2, ',', '.');
         
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        Receita::created(function ($receita) {
+            $user =  $receita->user['id'];
+        
+            DB::table('users')->where('id', $user)->increment('saldo', $receita->valor);  
+        });
+        Receita::updated(function ($receita) {
+            $user =  $receita->user['id'];
+        
+            DB::table('users')->where('id', $user)->increment('saldo', $receita->valor);  
+        });
+        Receita::updated(function ($receita) {
+            $user =  $receita->user['id'];
+        
+            DB::table('users')->where('id', $user)->decrement('saldo', $receita->valor);  
+        });
     }
 }

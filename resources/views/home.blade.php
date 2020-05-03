@@ -8,20 +8,20 @@
     			<div class="row justify-content-center">
     				<div class="col-4">
     					<span class="valores-home">SALDO ATUAL</span><br>
-	    				<strong><span class="valores-home">R$ 375,00</span></strong>
+	    				<strong><span class="valores-home">{{$saldo_total}}</span></strong>
     				</div>
     			</div>
     			<div class="row justify-content-between">
     				<div class="col-4">
     					<a href="{{route('receitas.index')}}" title="">
-	    					<span class="valores-home">RECEITA</span><br>
-	    					<strong><span class="valores-home">R$ 2100,00</span></strong>
+	    					<span class="valores-home">RECEITAS</span><br>
+	    					<strong><span class="valores-home">{{$total_receita}}</span></strong>
     					</a>
     				</div>
     				<div class="col-4">
     					<a href="{{route('despesas.index')}}" title="">
-	    					<span class="valores-home">DESPESA</span><br>
-	    					<strong><span class="valores-home">R$ 1800,00</span></strong>
+	    					<span class="valores-home">DESPESAS</span><br>
+						<strong><span class="valores-home">{{$total_despesa}}</span></strong>
     					</a>
     				</div>
     			</div>

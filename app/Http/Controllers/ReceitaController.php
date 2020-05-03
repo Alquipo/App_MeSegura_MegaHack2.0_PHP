@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateReceitaRequest;
 use App\Http\Requests\UpdateReceitaRequest;
 use App\Http\Controllers\AppBaseController;
+use Illuminate\Support\Facades\DB;
 use App\Models\Receita;
 use App\Models\Categoria;
 use Illuminate\Http\Request;
@@ -37,8 +38,12 @@ class ReceitaController extends AppBaseController
     public function create()
     {
         $categorias = Categoria::where('tipo', 'R');
+
+       
         // dd($categorias);
         return view('receitas.create')->with('categorias', $categorias);
+
+
     }
 
     /**
@@ -53,6 +58,8 @@ class ReceitaController extends AppBaseController
         $input = $request->all();
         /** @var Receita $receita */
         $receita = Receita::create($input);
+        
+        //dd($saldo_user);
 
         Flash::success('Receita salva com sucesso.');
 

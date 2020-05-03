@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Despesas;
+use App\Models\Receita;
+use Illuminate\Support\Facades\DB;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -23,6 +27,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $total_receita = DB::table('receitas')->sum('valor');
+        $total_despesa = DB::table('despesas')->sum('valor');
+        $saldo_total = DB::table('users')->value('saldo');
+       
+
+        //dd($total_receita);
+
+        return view('home',['total_receita' => $total_receita, 'total_despesa' => $total_despesa, 'saldo_total' => $saldo_total]);
+        
+
     }
 }
