@@ -200,7 +200,7 @@ class BotController extends Controller
         }
         else
         {
-            return json_encode(['actions'=>[['say'=> 'Olá! Verifiquei que você ainda não é cadastrado na nossa plataforma. Acesse o link para se cadastrar. http://be4d0c67.ngrok.io']]]);
+            return json_encode(['actions'=>[['say'=> "Olá! Verifiquei que você ainda não é cadastrado na nossa plataforma. Acesse o link para se cadastrar. \n\n http://www.mesegura.moldar.net/"]]]);
         }
 
     }
