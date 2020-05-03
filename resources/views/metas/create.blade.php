@@ -3,18 +3,20 @@
 @section('content')
     <section class="content-header text-center">
         <h1>
-            Cadastro de Receita
+           Cadastro de Metas
         </h1>
     </section>
     <div class="content">
         @include('adminlte-templates::common.errors')
         <div class="box box-primary">
             <div class="box-body">
-                    {!! Form::open(['route' => 'receitas.store']) !!}
+                
+                    {!! Form::open(['route' => 'metas.store']) !!}
 
-                        @include('receitas.fields')
+                        @include('metas.fields')
 
                     {!! Form::close() !!}
+               
             </div>
         </div>
     </div>

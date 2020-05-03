@@ -30,20 +30,24 @@
     
  }   
 .fundo {
-    background-color: #DCD6C8;
+    background-color: #DEDCDF;
     border-radius: 5px;
     padding: 1.15rem
 }
 
 .menu-app{
-    background-color: #FAFAFA;
-    border-radius: 100px;
-    padding: 10px;
+    /* background-color: #ffffff; */
+    /* border-radius: 100px; */
+    /* padding: 10px; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
 }
 
 .fa-menu-app
 {
-    font-size: 30px;
+    font-size: 40px;
+    /* background-image: url(../icon/Money-2-icon.png); */
+ 
 }
 
 .label-menu-app
@@ -53,7 +57,7 @@
 }
 
 .top-home{
-    background-color: #5C8A9A;
+    background-color: #62A7C4;
     border-radius: 20px;
     padding: 5px;
 }
@@ -74,17 +78,17 @@
     font-size: 8px;
 }
 
-.barra-verde,.barra-amarela,.barra-laranja,.barra-vermelha{
-    /*background-color: #5EB43E;*/
+/* .barra-verde,.barra-amarela,.barra-laranja,.barra-vermelha{
+    /*background-color: #5EB43E;
     border-radius: 22px;
     width: 100px;
     height: 20px;
     border-width: 1px;
     border-style: solid;
     position: relative;
-}
+} */
 
-.barra-verde
+/* .barra-verde
 {
     border-color: #5EB43E;   
 }
@@ -98,12 +102,12 @@
 {
     border-color: #F7A00E;
 
-}
+} */
 
-.barra-vermelha
+/* .barra-vermelha
 {
     border-color: #dc3545;
-}
+} */
 
 /*.fundo-vazio
 {

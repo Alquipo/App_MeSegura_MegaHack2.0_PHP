@@ -25,7 +25,7 @@
                 <div class="card">
                     <div class="card-body" style="padding-left: 8px; padding-right: 8px;">
                         <div class="row">
-                            <div class="col-8">
+                            <div class="col-7">
                                 <h5 class="card-title">{{$receita->nome}}
                                 <i class="fa fa-{{$receita->categoria->icone}}" title="{{$receita->categoria->nome}}" aria-hidden="true"></i>
                                 @if($receita->efetuada)
@@ -36,7 +36,7 @@
                                  </h5>
                                 <h6 class="card-subtitle mb-2 muted">{{$receita->data_formatada}}</h6>
                             </div>
-                            <div class="col-4">
+                            <div class="col-5">
                                 <span>R$ {{$receita->valor_receita_formatado}}</span><br>
                                 {!! Form::open(['route' => ['receitas.destroy', $receita->id], 'method' => 'delete']) !!}
                                 <div class='btn-group'>

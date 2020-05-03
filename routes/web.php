@@ -28,7 +28,17 @@ Route::resource('receitas', 'ReceitaController');
 
 Route::resource('despesas', 'DespesasController');
 
+Route::resource('metas', 'MetaController');
+
+
+
+
 Route::get('enviarchat', 'ChatSendController@index');
 
 
 
+
+
+
+
+Route::resource('metas', 'MetaController');
