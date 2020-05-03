@@ -34,7 +34,7 @@
                                   required
                                   v-model="form.email"
                                   placeholder="digite seu e-mail"
-                                  type="tel"
+                                  type="email"
                                   name="email"
                                   class="input-form-control"
                                 ></b-form-input>
@@ -95,7 +95,7 @@
                                   required
                                   v-model="form.idade"
                                   placeholder="digite sua idade"
-                                  type="text"
+                                  type="number"
                                   name="idade"
                                   class="input-form-control"
                                 ></b-form-input>
@@ -115,7 +115,7 @@
                                   required
                                   v-model="form.celular"
                                   placeholder="número de celular"
-                                  type="text"
+                                  type="tel"
                                   name="celular"
                                   class="input-form-control"
                                   v-mask="'(##) #####-####'" 

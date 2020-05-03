@@ -83347,7 +83347,7 @@ var render = function() {
                                         attrs: {
                                           required: "",
                                           placeholder: "digite seu e-mail",
-                                          type: "tel",
+                                          type: "email",
                                           name: "email"
                                         },
                                         model: {
@@ -83486,7 +83486,7 @@ var render = function() {
                                         attrs: {
                                           required: "",
                                           placeholder: "digite sua idade",
-                                          type: "text",
+                                          type: "number",
                                           name: "idade"
                                         },
                                         model: {
@@ -83543,7 +83543,7 @@ var render = function() {
                                         attrs: {
                                           required: "",
                                           placeholder: "número de celular",
-                                          type: "text",
+                                          type: "tel",
                                           name: "celular"
                                         },
                                         model: {
