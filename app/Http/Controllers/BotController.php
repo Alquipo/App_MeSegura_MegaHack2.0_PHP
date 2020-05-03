@@ -114,6 +114,21 @@ class BotController extends Controller
                 $respostas->categoria_id = 11;
         }
 
+        $respostas->data = Carbon::now()->toDateString();
+
+        $despesa = Despesas::create(
+            [
+                'nome' => $respostas->categoria->answer,
+                'valor'=> $respostas->valor->answer,
+                'data' => $respostas->data,
+                'categoria_id' => $respostas->categoria_id,
+                'user_id' => $user->id,
+            ]
+        );
+
+         return json_encode(['actions'=>[['say'=> 'Despesa de '.$despesa->categoria->nome.' cadastrada com sucesso!']]]);
+    }
+
     public function storeMetas(Request $request)
     {
         // return ($request->all());
