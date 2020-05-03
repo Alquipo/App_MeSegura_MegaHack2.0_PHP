@@ -97,7 +97,10 @@ class Receita extends Model
 
     public function setDataAttribute($value)
     {
-        $this->attributes['data'] = Carbon::createFromFormat("d/m/Y", $value)->toDateString();;
+        if (Str::contains($value, '/'))
+            $this->attributes['data'] = Carbon::createFromFormat("d/m/Y", $value)->toDateString();
+        else
+            $this->attributes['data'] = $value;
     }
 
     public function setValorAttribute($value)
@@ -107,6 +110,10 @@ class Receita extends Model
         if(Str::contains($value, 'R$')){
             $resultado = str_replace(["R$ ", "."], "", $value);
             $resultado = str_replace(["," ], ".", $resultado);
+        }
+        elseif(Str::contains($value,','))
+        {
+            $resultado = str_replace(["," ], ".", $value);
         }
         else
             $resultado = $value;

@@ -27,3 +27,11 @@ Route::post('/bot', 'BotController@store')->name('bot.store');
 
 Route::post('/user/register', 'UserController@register')->name('user.register');
 
+Route::post('/receitas', 'BotController@storeReceita')->name('bot.store.receita');
+Route::get('/receitas', 'BotController@listarReceitas')->name('bot.index.receita');
+
+Route::post('/despesas', 'BotController@storeDespesa')->name('bot.store.despesa');
+Route::get('/despesas', 'BotController@listarDespesas')->name('bot.index.despesa');
+
+Route::get('/reconhecer', 'BotController@reconhecer');
+
