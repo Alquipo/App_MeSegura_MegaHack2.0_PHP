@@ -29,7 +29,7 @@
 <body class="">
     <div class="container">
         <br>
-        <div class="col-md-4 offset-md-4 col-sm-12 fundo">
+        <div class="col-md-4 offset-md-4 col-sm-12 fundo" style="height:670px">
             @yield('content')
             <footer>
                 @include('layouts.menu-app')
