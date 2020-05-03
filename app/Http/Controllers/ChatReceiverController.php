@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Twilio\Twiml\MessagingResponse;
+use Twilio\TwiML\MessagingResponse;
 use Twilio\Rest\Client;
 
 use Illuminate\Support\Facades\Log;
@@ -13,7 +13,12 @@ class ChatReceiverController extends Controller
 {
     public function index()
     {
-              
+
+        // $response = new MessagingResponse();
+        // $response->message("The Robots are coming! Head for the hills!");
+        // echo $response;
+        
+    //> implementando api de cadastro de receitas e despesas pelo bot
         $response = new MessagingResponse();
         $guess = $_REQUEST['Body'];
         $pick = rand(1, 5);

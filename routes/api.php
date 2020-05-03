@@ -27,3 +27,6 @@ Route::post('/bot', 'BotController@store')->name('bot.store');
 
 Route::post('/user/register', 'UserController@register')->name('user.register');
 
+Route::post('/receitas', 'BotController@storeReceita')->name('bot.store.receita');
+Route::post('/despesas', 'BotController@storeDespesa')->name('bot.store.despesa');
+
