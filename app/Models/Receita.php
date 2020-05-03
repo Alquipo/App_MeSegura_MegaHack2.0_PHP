@@ -111,6 +111,10 @@ class Receita extends Model
             $resultado = str_replace(["R$ ", "."], "", $value);
             $resultado = str_replace(["," ], ".", $resultado);
         }
+        elseif(Str::contains($value,','))
+        {
+            $resultado = str_replace(["," ], ".", $value);
+        }
         else
             $resultado = $value;
          

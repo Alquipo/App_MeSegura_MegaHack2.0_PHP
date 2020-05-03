@@ -36,7 +36,7 @@ class BotController extends Controller
 
     public function storeReceita(Request $request)
     {
-        return ($request->all());
+        // return ($request->all());
         $input = json_decode($request->get('Memory'));
         $respostas = $input->twilio->collected_data->collect_receita->answers;
 
