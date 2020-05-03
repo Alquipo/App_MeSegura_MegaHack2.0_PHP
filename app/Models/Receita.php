@@ -134,7 +134,7 @@ class Receita extends Model
         
             DB::table('users')->where('id', $user)->increment('saldo', $receita->valor);  
         });
-        Receita::updated(function ($receita) {
+        Receita::deleted(function ($receita) {
             $user =  $receita->user['id'];
         
             DB::table('users')->where('id', $user)->decrement('saldo', $receita->valor);  

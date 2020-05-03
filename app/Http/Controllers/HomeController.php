@@ -8,6 +8,7 @@ use App\Models\Receita;
 use Illuminate\Support\Facades\DB;
 use App\User;
 
+
 class HomeController extends Controller
 {
     /**
@@ -27,11 +28,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        $total_receita = DB::table('receitas')->sum('valor');
-        $total_despesa = DB::table('despesas')->sum('valor');
+           
+        $total_receita = DB::table('receitas')->where('deleted_at', null)->sum('valor');
+        $total_despesa = DB::table('despesas')->where('deleted_at', null)->sum('valor');
         $saldo_total = DB::table('users')->value('saldo');
-       
+        
 
         //dd($total_receita);
 

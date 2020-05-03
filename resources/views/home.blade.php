@@ -6,7 +6,7 @@
     <div class="row top-home text-center">
     		<div class="col-12">
     			<div class="row justify-content-center">
-    				<div class="col-4">
+    				<div class="col-6">
     					<span class="valores-home">SALDO ATUAL</span><br>
 	    				<strong><span class="valores-home">{{$saldo_total}}</span></strong>
     				</div>

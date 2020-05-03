@@ -129,10 +129,10 @@ class Despesas extends Model
         
             DB::table('users')->where('id', $user)->decrement('saldo', $despesa->valor);  
         });
-        Despesas::updated(function ($despesa) {
+        Despesas::deleted(function ($despesa) {
             $user =  $despesa->user['id'];
         
-            DB::table('users')->where('id', $user)->imcrement('saldo', $despesa->valor);  
+            DB::table('users')->where('id', $user)->increment('saldo', $despesa->valor);  
         });
     }
 }
