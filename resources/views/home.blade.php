@@ -54,14 +54,42 @@
 						
 					</div>
 				</div>
+				@php
+				$porcentagemt = array_sum($total_despesa_meta) * 100;
+				$porcentagemt = $porcentagemt / array_sum($total_meta);
+				$porcentagemt = number_format($porcentagemt,2);
+				@endphp
+					@if($porcentagemt >= 75) 
+					<div class="col-md-12">
+						<div class="progress" style="height: 25px; border-radius: 20px">
+							<div class="progress-bar" role="progressbar" style="width: 25%; background: #93CE54" aria-valuenow="25" aria-valuemin="25" aria-valuemax="25"></div>
+							<div class="progress-bar rounded-pill" role="progressbar" style="width: 25%; background: #FFE748" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+							<div class="progress-bar" role="progressbar" style="width: 25%; background: #EE6401" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+							<div class="progress-bar" role="progressbar" style="width: 25%; background: #F1002D" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+				@elseif ($porcentagemt >= 50 && $porcentagem < 75)
 				<div class="col-md-12">
 					<div class="progress" style="height: 25px; border-radius: 20px">
 						<div class="progress-bar" role="progressbar" style="width: 25%; background: #93CE54" aria-valuenow="25" aria-valuemin="25" aria-valuemax="25"></div>
 						<div class="progress-bar rounded-pill" role="progressbar" style="width: 25%; background: #FFE748" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
 						<div class="progress-bar" role="progressbar" style="width: 25%; background: #EE6401" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-						<div class="progress-bar" role="progressbar" style="width: 25%; background: #F1002D" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
 					</div>
 				</div>
+				@elseif($porcentagemt >= 25 && $porcentagem < 50)
+				<div class="col-md-12">
+					<div class="progress" style="height: 25px; border-radius: 20px">
+						<div class="progress-bar" role="progressbar" style="width: 25%; background: #93CE54" aria-valuenow="25" aria-valuemin="25" aria-valuemax="25"></div>
+						<div class="progress-bar rounded-pill" role="progressbar" style="width: 25%; background: #FFE748" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+				</div>
+				@else
+				<div class="col-md-12">
+					<div class="progress" style="height: 25px; border-radius: 20px">
+						<div class="progress-bar" role="progressbar" style="width: 25%; background: #93CE54" aria-valuenow="25" aria-valuemin="25" aria-valuemax="25"></div>
+					</div>
+				</div>
+				@endif
    
     		</div>
 		</div>
@@ -87,10 +115,9 @@
 									@endif
 								</div>
 								@php
-								$porcentagem = ($total_despesa_meta[$meta->categoria_id] * 100) ;
-								$porcentagem = $porcentagem / $meta->valor;
-								$porcentagem = number_format($porcentagem,2);
-								
+									$porcentagem = ($total_despesa_meta[$meta->categoria_id] * 100) ;
+									$porcentagem = $porcentagem / $meta->valor;
+									$porcentagem = number_format($porcentagem,2);
 								@endphp
 							</div>
 						</div>
